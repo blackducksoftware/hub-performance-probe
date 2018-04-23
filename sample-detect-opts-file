@@ -1,0 +1,6 @@
+--detect.pip.requirements.path=./requirements.txt
+--detect.python.python3=true
+--detect.cleanup.bom.tool.files=false
+--detect.hub.signature.scanner.disabled=true
+--detect.policy.check=true
+--detect.output.path=/tmp

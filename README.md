@@ -1,0 +1,62 @@
+## Overview ##
+The Hub performance probe provides a benchmarking tool to compare the relative performance of Hub server environments.
+
+It will run hub detect multiple times on the same test project (Struts showcase app), and with increasing concurrency, and accumulate the results into a CSV file. The results can be compared to the results obtained in other Hub server environments to assess the relative performance of the environment being analyzed.
+
+## Requirements ##
+The Hub performance probe can either be run directly using python 3.4+ OR can be run via docker using docker CE 17.x or 18.x.
+
+## To build ##
+```
+docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
+```
+
+## To run ##
+### To run directly using python,
+
+1. Install/setup python 3.4+ and pip. 
+    * Are you using virtualenv? you should.
+
+1. Clone this repo and cd into it
+
+1. Install the Hub probe python requirements using 
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+1. Now run the probe, e.g.
+
+	```
+	python3 hub_performance_probe.py https://my-hub-dns my-hub-account my-password
+	```
+
+    where you should substitute the following,
+
+    * my-hub-dns should be the DNS (or IP address) for your Hub server
+    * my-hub-account is an account on the Hub server that has the correct privileges to process a scan
+
+### To run via docker
+
+1. Make a directory that the container can mount to write the results into, e.g.
+
+    ```shell
+    mkdir /tmp/log
+    ```
+
+2. Now run the container, mounting the directory you created in the first step
+
+    ```
+    docker run -v /tmp/log:/var/log gsnyderbds/hub_performance_probe hub_performance_probe.py https://my-hub-dns my-hub-account my-password
+    ```
+
+    where you should substitute the following,
+
+    * my-hub-dns should be the DNS (or IP address) for your Hub server
+    * my-hub-account is an account on the Hub server that has the correct privileges to process a scan
+    * gsnyderbds/hub_performance_probe should be substituted with your own repo/tag if you decide to build and use your own
+
+3. When the docker container is finished check the directory from the first step for the results
+
+
+If you have feedback regarding the Hub performance probe submit an issue or contact Glenn Snyder gsnyder@synopsys.com
