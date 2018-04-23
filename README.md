@@ -7,12 +7,21 @@ It will run hub detect multiple times on the same test project (Struts showcase 
 The Hub performance probe can either be run directly using python 3.4+ OR can be run via docker using docker CE 17.x or 18.x.
 
 ## To build ##
+
 ```
 docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
 ```
 
 ## To run ##
-### To run directly using python,
+### To run directly using python
+
+#### To get help
+
+```
+python hub_performance_probe.py -h
+```
+
+#### To run using python
 
 1. Install/setup python 3.4+ and pip. 
     * Are you using virtualenv? you should.
@@ -37,6 +46,14 @@ docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
     * my-hub-account is an account on the Hub server that has the correct privileges to process a scan
 
 ### To run via docker
+
+#### To get help
+
+```
+docker run gsnyderbds/hub_performance_probe -h
+```
+
+#### To run the container
 
 1. Make a directory that the container can mount to write the results into, e.g.
 
