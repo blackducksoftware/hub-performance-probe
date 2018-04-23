@@ -47,7 +47,7 @@ docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
 2. Now run the container, mounting the directory you created in the first step
 
     ```
-    docker run -v /tmp/log:/var/log gsnyderbds/hub_performance_probe hub_performance_probe.py https://my-hub-dns my-hub-account my-password
+    docker run -v /tmp/log:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns my-hub-account my-password
     ```
 
     where you should substitute the following,
