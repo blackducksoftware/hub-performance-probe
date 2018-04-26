@@ -20,10 +20,13 @@ WORKDIR /usr/src/app
 
 COPY test_projects ./test_projects
 
+COPY hub-detect*.jar .
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY *.py ./
+COPY *.py .
+
 
 # see https://blog.codeship.com/understanding-dockers-cmd-and-entrypoint-instructions/
 ENTRYPOINT ["python", "hub_performance_probe.py"]

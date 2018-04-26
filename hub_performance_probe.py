@@ -72,10 +72,14 @@ class HubPerformanceProbe:
 		options.extend(self.detect_options)
 		for i in range(iterations):
 			logging.debug('iteration %s for project %s' % (i + 1, test_project_d))
+
+			# using hard-coded hub detect version for now since the newest version, v3.2.0 breaks some things
 			hub_detect_wrapper = HubDetectWrapper(
 				self.hub_url, 
 				self.hub_user, 
-				self.hub_password, additional_detect_options=options)
+				self.hub_password, 
+				additional_detect_options=options,
+				detect_path="./hub-detect-3.1.1.jar")
 			thread_project_results = hub_detect_wrapper.run()
 			thread_project_results.update(test_config_d)
 			self.results.append(thread_project_results)
@@ -139,6 +143,7 @@ if __name__ == "__main__":
 	parser.add_argument("password", default="blackduck")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
 	parser.add_argument("--detectoutputbasedir", default="/var/log/hub_probe_outputs", help="Override where detect output files are written. Useful when running the probe inside a docker container and you wnat to write to a host mounted volume")
+	parser.add_argument("--description", help="A description that will be included in the test results")
 	parser.add_argument("--iterations", type=int, default=4)
 	parser.add_argument("--logfile", default="/var/log/hub_probe.log", help="Where to log the hub performance probe output")
 	parser.add_argument("--loglevel", choices=["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"], default="DEBUG", help="Choose the desired logging level - CRITICAL, DEBUG, ERROR, INFO, or WARNING. (default: DEBUG)")

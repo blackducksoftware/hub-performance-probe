@@ -23,14 +23,15 @@ class HubDetectWrapper:
 			target_path="./", 
 			queue_name="hub_scan_results", 
 			additional_detect_options=[],
-			detect_log_path=None):
+			detect_log_path=None,
+			detect_path=None):
 		self.hub_url=hub_url
 		self.hub_user = hub_user
 		self.hub_password = hub_password
 		self.queue_name = queue_name
 		self.target_path = target_path
 		self.additional_detect_options = additional_detect_options
-		self.hub_detect_path = Path("/tmp/hub-detect.sh")
+		self.hub_detect_path = Path(detect_path)
 		self._get_detect(self.hub_detect_path)
 		self.detect_log_path = None
 
@@ -90,15 +91,29 @@ class HubDetectWrapper:
 				output_dir=output_path_option_search.group(1)
 		return output_dir
 
+	def _determine_hub_detect_subprocess_options(self):
+		''' Parse the hub detect path to determine if it's a jar or shell script and adjust options accordingly
+		'''
+		file_extension = self.hub_detect_path.name.split(".")[-1]
+		acceptable_extensions = ["sh", "jar"]
+
+		assert file_extension in acceptable_extensions, "File extension - %s - not in acceptable list of extensions %s" % (file_extension, acceptable_extensions)
+
+		if file_extension == "jar":
+			return ["java", "-jar", self.hub_detect_path]
+		else:
+			return [self.hub_detect_path]
+
+
 	def run(self):
 		# run hub detect, parse the output results to get the information desired, formulate a message, and send the message
 		start = datetime.now()
-		options = [
-				self.hub_detect_path,
+		options = self._determine_hub_detect_subprocess_options()
+		options.extend([
 				'--blackduck.hub.url=%s' % self.hub_url,
 				'--blackduck.hub.username=%s' % self.hub_user,
 				'--blackduck.hub.password=%s' % self.hub_password,
-				]
+				])
 		options.extend(self.additional_detect_options)
 		logging.debug('Running hub detect with options: %s' % self._redact(options))
 		# logging.debug('Running hub detect with options: %s' % self._redact(options))
