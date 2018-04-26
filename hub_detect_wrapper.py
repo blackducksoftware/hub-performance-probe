@@ -36,6 +36,7 @@ class HubDetectWrapper:
 		self.detect_log_path = None
 
 	def _get_detect(self, path):
+		logging.debug("hub detect path given is: %s" % str(path))
 		if not path.is_file():
 			with open("/tmp/hub-detect.sh", 'w') as f:
 				curl_result = subprocess.run(["curl", "-s", "https://blackducksoftware.github.io/hub-detect/hub-detect.sh"], stdout=f)
