@@ -1,7 +1,7 @@
 ## Overview ##
 The Hub performance probe provides a benchmarking tool to compare the relative performance of Hub server environments.
 
-It will run hub detect multiple times on the same test project (Struts showcase app), and with increasing concurrency, and accumulate the results into a CSV file. The results can be compared to the results obtained in other Hub server environments to assess the relative performance of the environment being analyzed.
+It will run hub detect multiple times on the same test project (Struts showcase app), and with increasing concurrency, and accumulate the results into a CSV file. The results can then be compared to the results obtained in other Hub server environments to assess the relative performance of the environment being analyzed. 
 
 ## Requirements ##
 The Hub performance probe can either be run directly using python 3.4+ OR can be run via docker using docker CE 17.x or 18.x.
@@ -74,6 +74,15 @@ docker run gsnyderbds/hub_performance_probe -h
     * gsnyderbds/hub_performance_probe should be substituted with your own repo/tag if you decide to build and use your own
 
 3. When the docker container is finished check the directory from the first step for the results
+
+## Future Work ##
+* Provide a cleanup option that will remove the test projects from the Hub server
+* Capture the command used to run the probe along with the version info so the exact tests can be repeated at a later date (e.g. 6 months later or a year later)
+* Add different combinations of detect options, e.g.
+  * with and without policy checks
+  * with and without risk report generation
+  * with and without file system scanning
+  * with and without snippet matching
 
 
 If you have feedback regarding the Hub performance probe submit an issue or contact Glenn Snyder gsnyder@synopsys.com
