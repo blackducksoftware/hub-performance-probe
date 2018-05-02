@@ -22,6 +22,17 @@ TEST_PROJECTS=[
 	{'project_name': 'TEST-PROBE-showcase-%s' % i, 'version': '2.3.30', 'folder' : '%s/showcase%s' % (TEST_PROJECTS_FOLDER, i)} for i in range(1,51)
 ]
 
+DETECT_SCANNING_OPTIONS = [
+	{'detect_options': []},
+	{'detect_options': ['--detect.policy.check=true',]},
+	{'detect_options': ['--detect.risk.report.pdf=true',]},
+	{'detect_options': ['--detect.policy.check=true', '--detect.risk.report.pdf=true',]},
+	{'detect_options': ['--detect.hub.signature.scanner.disabled=true',]},	
+	{'detect_options': ['--detect.hub.signature.scanner.disabled=true', '--detect.policy.check=true',]},
+	{'detect_options': ['--detect.hub.signature.scanner.disabled=true', '--detect.policy.check=true', '--detect.risk.report.pdf=true',]},
+]
+	
+
 class HubPerformanceProbe:
 	'''Starting with one thread test the performance of the hub server by running hub detect on a known project.
 	Gradually increase the concurrency up to the limits of the host machine to probe how the hub server performs 
@@ -41,11 +52,9 @@ class HubPerformanceProbe:
 		self.hub_user = hub_user
 		self.hub_password = hub_password
 		self.detect_options = [
-			'--detect.hub.signature.scanner.disabled=true',
-			'--detect.policy.check=true',
 			'--blackduck.hub.trust.cert=true',
 		]
-		self.results = []
+		self.overall_results = []
 		self.csv_output_file = csv_output_file
 		self.initial_threads = initial_threads
 		self.iterations = iterations
@@ -54,6 +63,10 @@ class HubPerformanceProbe:
 		self.detect_output_base_dir = detect_output_base_dir
 
 	def detect_worker(self, test_project_d, iterations, test_config_d):
+		'''Given a test project dict, the number of iterations, and a test config dict
+		run hub detect for the number of iterations using the details in the test config
+		and add the results to the overall results
+		'''
 		logging.debug("starting %s iterations to analyze project %s with config %s" % (iterations, test_project_d, test_config_d))
 		folder = test_project_d['folder']
 		project_name = test_project_d['project_name']
@@ -63,13 +76,17 @@ class HubPerformanceProbe:
 			output_path = os.path.join(self.detect_output_base_dir, folder)
 		else:
 			output_path = folder
+
 		options = [
 				'--detect.project.name=%s' % project_name,
 				'--detect.project.version.name=%s' % version,
 				'--detect.source.path=%s' % folder,
 				'--detect.output.path=%s_output' % output_path,
+				'--detect.risk.report.pdf.path=%s_output' % output_path,
 			]
 		options.extend(self.detect_options)
+		options.extend(test_config_d.get('detect_options', {}))
+
 		for i in range(iterations):
 			logging.debug('iteration %s for project %s' % (i + 1, test_project_d))
 
@@ -82,20 +99,33 @@ class HubPerformanceProbe:
 				detect_path="./hub-detect-3.1.1.jar")
 			thread_project_results = hub_detect_wrapper.run()
 			thread_project_results.update(test_config_d)
-			self.results.append(thread_project_results)
+			self.overall_results.append(thread_project_results)
 			logging.debug('results for project %s are %s' % (test_project_d, thread_project_results))
 		logging.debug("thread exiting after performing %s iterations on project %s" % (iterations, test_project_d))
 		
 	def _flatten_results(self):
 		flattened_results = []
-		for result in self.results:
-			component_info = result['component_info']
+
+		# In some cases no component information is yielded by hub detect, 
+		# e.g. running without a policy check option, so we need a placeholder record
+		components_placeholder = {
+			'components_not_in_violation': 'NA', 
+			'total_components': 'NA', 
+			'components_in_violation': 'NA', 
+			'components_in_violation_overridden': 'NA',
+		}
+
+		for result in self.overall_results:
+			# In some cases no component information is yielded by hub detect, 
+			# e.g. running without a policy check option, so need to insert a placeholder
+			# for the CSV output to work propoerly
+			component_info = result.get('component_info') or components_placeholder
 			del result['component_info']
 			result.update(component_info)
 			flattened_results.append(result)
 		return flattened_results
 
-	def _results_as_csv(self):
+	def _save_results_as_csv(self):
 		flattened_results = self._flatten_results()
 		keys = flattened_results[0].keys()
 		with open(self.csv_output_file, 'w') as output_file:
@@ -108,23 +138,33 @@ class HubPerformanceProbe:
 		analysis_iterations = self.iterations
 		num_threads = self.initial_threads
 		cpu_count = multiprocessing.cpu_count()
-		test_config = {'max_threads': self.max_threads, 'cpu_cout': cpu_count, 'iterations': analysis_iterations}
+		base_test_config = {'max_threads': self.max_threads, 'cpu_cout': cpu_count, 'iterations': analysis_iterations}
 
 		start = datetime.now()
 		logging.debug("Probing started")
-		while num_threads <= self.max_threads:
-			test_config['num_threads'] = num_threads
-			for i in range(num_threads):
-				test_project = TEST_PROJECTS[i]
-				new_thread = threading.Thread(target=self.detect_worker, args=(test_project, analysis_iterations, test_config,))
-				threads.append(new_thread)
-				new_thread.start()
-			for t in threads:
-				t.join()
-			logging.debug(self.results)
-			num_threads *= 2
 
-		self._results_as_csv()
+		# starting with a base test config, merge different combinations of scanning options
+		# and run iterations with increasing concurrency
+		for detect_scanning_options in DETECT_SCANNING_OPTIONS:
+			test_config_copy = base_test_config.copy()
+			test_config_copy.update(detect_scanning_options)
+
+			# Now, for each set of scanning options we ramp up the threads to a reasonable limit
+			while num_threads <= self.max_threads:
+				test_config_copy['num_threads'] = num_threads
+				for i in range(num_threads):
+					test_project = TEST_PROJECTS[i]
+					new_thread = threading.Thread(target=self.detect_worker, args=(test_project, analysis_iterations, test_config_copy,))
+					threads.append(new_thread)
+					new_thread.start()
+				for t in threads:
+					t.join()
+				logging.debug(self.overall_results)
+				num_threads *= 2
+
+			num_threads = self.initial_threads
+
+		self._save_results_as_csv()
 
 		finish = datetime.now()
 		logging.debug("Finished probing, elapsed time %s" % (finish - start))
