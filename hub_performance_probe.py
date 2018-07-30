@@ -101,6 +101,7 @@ class HubPerformanceProbe:
 			thread_project_results.update(test_config_d)
 			self.overall_results.append(thread_project_results)
 			logging.debug('results for project %s are %s' % (test_project_d, thread_project_results))
+			logging.debug("now have %s overall results" % (len(self.overall_results)))
 		logging.debug("thread exiting after performing %s iterations on project %s" % (iterations, test_project_d))
 		
 	def _flatten_results(self):
@@ -115,6 +116,7 @@ class HubPerformanceProbe:
 			'components_in_violation_overridden': 'NA',
 		}
 
+		logging.debug("flattening {} results".format(len(self.overall_results)))
 		for result in self.overall_results:
 			# In some cases no component information is yielded by hub detect, 
 			# e.g. running without a policy check option, so need to insert a placeholder
@@ -127,6 +129,7 @@ class HubPerformanceProbe:
 
 	def _save_results_as_csv(self):
 		flattened_results = self._flatten_results()
+		logging.debug("writing {} results into CSV file {}".format(len(flattened_results), self.csv_output_file))
 		keys = flattened_results[0].keys()
 		with open(self.csv_output_file, 'w') as output_file:
 			dict_writer = csv.DictWriter(output_file, keys)
@@ -149,7 +152,10 @@ class HubPerformanceProbe:
 			test_config_copy = base_test_config.copy()
 			test_config_copy.update(detect_scanning_options)
 
+			logging.debug("Running up to {} threads using detect options {} and test config {}".format(self.max_threads, detect_scanning_options, test_config_copy))
 			# Now, for each set of scanning options we ramp up the threads to a reasonable limit
+			# Each thread adds hub detect results to a list of results
+			# At the end, the overall results will be written into a Excel/CSV file
 			while num_threads <= self.max_threads:
 				test_config_copy['num_threads'] = num_threads
 				for i in range(num_threads):
@@ -157,9 +163,9 @@ class HubPerformanceProbe:
 					new_thread = threading.Thread(target=self.detect_worker, args=(test_project, analysis_iterations, test_config_copy,))
 					threads.append(new_thread)
 					new_thread.start()
+				logging.debug("launched {} threads, waiting for them to finish".format(num_threads))
 				for t in threads:
 					t.join()
-				logging.debug(self.overall_results)
 				num_threads *= 2
 
 			num_threads = self.initial_threads

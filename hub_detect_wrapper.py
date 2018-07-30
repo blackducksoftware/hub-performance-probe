@@ -117,7 +117,7 @@ class HubDetectWrapper:
 				])
 		options.extend(self.additional_detect_options)
 		logging.debug('Running hub detect with options: %s' % self._redact(options))
-		# logging.debug('Running hub detect with options: %s' % self._redact(options))
+
 		result = subprocess.run(
 			options, 
 			stdout=subprocess.PIPE, 
