@@ -96,7 +96,7 @@ class HubPerformanceProbe:
 				self.hub_user, 
 				self.hub_password, 
 				additional_detect_options=options,
-				detect_path="./hub-detect-3.1.1.jar")
+				detect_path="./hub-detect-4.1.0.jar")
 			thread_project_results = hub_detect_wrapper.run()
 			thread_project_results.update(test_config_d)
 			self.overall_results.append(thread_project_results)
