@@ -18,16 +18,14 @@ import subprocess
 class HubDetectWrapper:
 	def __init__(self, 
 			hub_url, 
-			hub_user="sysadmin", 
-			hub_password="blackduck", 
+			hub_token, 
 			target_path="./", 
 			queue_name="hub_scan_results", 
 			additional_detect_options=[],
 			detect_log_path=None,
 			detect_path=None):
 		self.hub_url=hub_url
-		self.hub_user = hub_user
-		self.hub_password = hub_password
+		self.hub_token = hub_token
 		self.queue_name = queue_name
 		self.target_path = target_path
 		self.additional_detect_options = additional_detect_options
@@ -67,6 +65,22 @@ class HubDetectWrapper:
 			component_info['components_in_violation_overridden'] = int(component_info_search.group(2))
 			component_info['components_not_in_violation'] = int(component_info_search.group(3))
 			component_info['total_components'] = sum(component_info.values())
+		component_info_search = re.search(
+			r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO .+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- uploading', 
+			detect_output,re.DOTALL)
+		if component_info_search:
+			first = datetime.fromisoformat(component_info_search.group(1))
+			upload = datetime.fromisoformat(component_info_search.group(2))
+			delta = upload - first
+			component_info['local_processing'] = delta.total_seconds()
+		component_info_search = re.search(
+			r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- uploading.+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- Policy Status', 
+			detect_output,re.DOTALL)
+		if component_info_search:
+			first = datetime.fromisoformat(component_info_search.group(1))
+			upload = datetime.fromisoformat(component_info_search.group(2))
+			delta = upload - first
+			component_info['server_processing'] = delta.total_seconds()
 		return {
 			'overall_status': overall_status, 
 			'policy_violation': policy_violation, 
@@ -76,8 +90,8 @@ class HubDetectWrapper:
 	def _redact(self, options):
 		redacted_options = []
 		for option in options:
-			if re.findall(r'--blackduck.hub.password=', str(option)):
-				redacted_options.append(['--blackduck.hub.password=<redacted>'])
+			if re.findall(r'--blackduck.hub.api.token=', str(option)):
+				redacted_options.append(['--blackduck.hub.api.token=<redacted>'])
 			else:
 				redacted_options.append(option)
 		return redacted_options
@@ -112,8 +126,7 @@ class HubDetectWrapper:
 		options = self._determine_hub_detect_subprocess_options()
 		options.extend([
 				'--blackduck.hub.url=%s' % self.hub_url,
-				'--blackduck.hub.username=%s' % self.hub_user,
-				'--blackduck.hub.password=%s' % self.hub_password,
+				'--blackduck.hub.api.token=%s' % self.hub_token,
 				])
 		options.extend(self.additional_detect_options)
 		logging.debug('Running hub detect with options: %s' % self._redact(options))
@@ -151,8 +164,7 @@ if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument("url")
-	parser.add_argument("username", default="sysadmin")
-	parser.add_argument("password", default="blackduck")
+	parser.add_argument("token")
 	parser.add_argument("--logfile", default="detect_wrapper.log", help="Where to log the hub detect wrapper output")
 	parser.add_argument("--loglevel", choices=["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"], default="DEBUG", help="Choose the desired logging level - CRITICAL, DEBUG, ERROR, INFO, or WARNING. (default: DEBUG)")
 	parser.add_argument("--options_file", help="Additional hub detect options")
@@ -175,8 +187,7 @@ if __name__ == "__main__":
 
 	hdw = HubDetectWrapper(
 		args.url, 
-		args.username, 
-		args.password, 
+		args.token, 
 		additional_detect_options=additional_options,
 		detect_log_path=args.detectlogpath)
 	logging.debug(hdw.run())
