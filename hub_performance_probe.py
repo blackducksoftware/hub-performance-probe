@@ -30,13 +30,17 @@ class HubPerformanceProbe:
 	def __init__(
 			self, 
 			hub_url, 
-			hub_token,
+			hub_user="sysadmin", 
+			hub_password="blackduck",
+			hub_token="undefined",
 			csv_output_file="out.csv",
 			initial_threads=1,
 			iterations=4,
 			max_threads=-1,
 			detect_output_base_dir=None):
 		self.hub_url = hub_url
+		self.hub_user = hub_user
+		self.hub_password = hub_password
 		self.hub_token = hub_token
 		self.detect_options = [
 			'--detect.hub.signature.scanner.disabled=true',
@@ -74,9 +78,12 @@ class HubPerformanceProbe:
 			# using hard-coded hub detect version for now since the newest version, v3.2.0 breaks some things
 			hub_detect_wrapper = HubDetectWrapper(
 				self.hub_url, 
+				self.hub_user,
+				self.hub_password,
 				self.hub_token, 
 				additional_detect_options=options,
 				detect_path="./hub-detect-4.2.1.jar")
+				#detect_path="./hub-detect-3.1.1.jar")
 			thread_project_results = hub_detect_wrapper.run()
 			# Failures break CSV output. 
 			# I add 1 retry and if unsuccessful - exclude results
@@ -148,7 +155,9 @@ if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument("url")
-	parser.add_argument("token", default="")
+	parser.add_argument("--username", default="sysadmin")
+	parser.add_argument("--password", default="blackduck")
+	parser.add_argument("--token", default="undefined", help="USe authentication token, this will ignore username and password options")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
 	parser.add_argument("--detectoutputbasedir", default="/var/log/hub_probe_outputs", help="Override where detect output files are written. Useful when running the probe inside a docker container and you wnat to write to a host mounted volume")
 	parser.add_argument("--description", help="A description that will be included in the test results")
@@ -170,6 +179,8 @@ if __name__ == "__main__":
 
 	hpp = HubPerformanceProbe(
 		args.url, 
+		hub_user=args.username, 
+		hub_password=args.password, 
 		hub_token=args.token,
 		csv_output_file=args.csvfile, 
 		iterations=args.iterations,
