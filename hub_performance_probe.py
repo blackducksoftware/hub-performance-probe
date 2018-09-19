@@ -32,6 +32,7 @@ class HubPerformanceProbe:
 			hub_url, 
 			hub_user="sysadmin", 
 			hub_password="blackduck",
+			hub_token="undefined",
 			csv_output_file="out.csv",
 			initial_threads=1,
 			iterations=4,
@@ -40,9 +41,10 @@ class HubPerformanceProbe:
 		self.hub_url = hub_url
 		self.hub_user = hub_user
 		self.hub_password = hub_password
+		self.hub_token = hub_token
 		self.detect_options = [
 			'--detect.hub.signature.scanner.disabled=true',
-			'--detect.policy.check=true',
+			'--detect.policy.check.fail.on.severities=ALL',
 			'--blackduck.hub.trust.cert=true',
 		]
 		self.results = []
@@ -76,14 +78,21 @@ class HubPerformanceProbe:
 			# using hard-coded hub detect version for now since the newest version, v3.2.0 breaks some things
 			hub_detect_wrapper = HubDetectWrapper(
 				self.hub_url, 
-				self.hub_user, 
-				self.hub_password, 
+				self.hub_user,
+				self.hub_password,
+				self.hub_token, 
 				additional_detect_options=options,
-				detect_path="./hub-detect-3.1.1.jar")
+				detect_path="./hub-detect-4.2.1.jar")
+				#detect_path="./hub-detect-3.1.1.jar")
 			thread_project_results = hub_detect_wrapper.run()
-			thread_project_results.update(test_config_d)
-			self.results.append(thread_project_results)
-			logging.debug('results for project %s are %s' % (test_project_d, thread_project_results))
+			# Failures break CSV output. 
+			# I add 1 retry and if unsuccessful - exclude results
+			if (thread_project_results['returncode'] > 0):
+				thread_project_results = hub_detect_wrapper.run()
+			if (thread_project_results['returncode'] == 0):
+				thread_project_results.update(test_config_d)
+				self.results.append(thread_project_results)
+				logging.debug('results for project %s are %s' % (test_project_d, thread_project_results))
 		logging.debug("thread exiting after performing %s iterations on project %s" % (iterations, test_project_d))
 		
 	def _flatten_results(self):
@@ -108,7 +117,7 @@ class HubPerformanceProbe:
 		analysis_iterations = self.iterations
 		num_threads = self.initial_threads
 		cpu_count = multiprocessing.cpu_count()
-		test_config = {'max_threads': self.max_threads, 'cpu_cout': cpu_count, 'iterations': analysis_iterations}
+		test_config = {'max_threads': self.max_threads, 'cpu_count': cpu_count, 'iterations': analysis_iterations}
 
 		start = datetime.now()
 		logging.debug("Probing started")
@@ -135,12 +144,20 @@ def copy_results_to_s3(results_file, s3bucket):
 	s3.Bucket(s3bucket).put_object(Key=results_file, Body=data)
 
 if __name__ == "__main__":
+	import os
+	
+	path=os.environ['PATH']
+	path = path + ":/usr/local/bin"
+	
+	os.environ['PATH'] = path
+	
 	import argparse
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument("url")
-	parser.add_argument("username", default="sysadmin")
-	parser.add_argument("password", default="blackduck")
+	parser.add_argument("--username", default="sysadmin")
+	parser.add_argument("--password", default="blackduck")
+	parser.add_argument("--token", default="undefined", help="USe authentication token, this will ignore username and password options")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
 	parser.add_argument("--detectoutputbasedir", default="/var/log/hub_probe_outputs", help="Override where detect output files are written. Useful when running the probe inside a docker container and you wnat to write to a host mounted volume")
 	parser.add_argument("--description", help="A description that will be included in the test results")
@@ -161,9 +178,10 @@ if __name__ == "__main__":
 	logging.basicConfig(filename=args.logfile, format='%(threadName)s: %(asctime)s: %(levelname)s: %(message)s', level=logging_levels[args.loglevel])
 
 	hpp = HubPerformanceProbe(
-		hub_url=args.url, 
+		args.url, 
 		hub_user=args.username, 
 		hub_password=args.password, 
+		hub_token=args.token,
 		csv_output_file=args.csvfile, 
 		iterations=args.iterations,
 		max_threads=args.maxthreads,
