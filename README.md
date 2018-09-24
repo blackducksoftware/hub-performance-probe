@@ -64,7 +64,15 @@ docker run gsnyderbds/hub_performance_probe -h
 2. Now run the container, mounting the directory you created in the first step
 
     ```
-    docker run -d -v /tmp/log:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns my-hub-account my-password
+    docker run -d -v /tmp/log:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns --token=$token
+    cd /tmp/log
+    tail -f hub_probe.log
+    ```
+     
+    Running the container with pasword authentication 
+
+    ```
+    docker run -d -v /tmp/log:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns --username=my-hub-account --password=my-password
     cd /tmp/log
     tail -f hub_probe.log
     ```
