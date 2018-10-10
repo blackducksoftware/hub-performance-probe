@@ -35,13 +35,15 @@ class HubDetectWrapper:
 			self.hub_detect_path = Path(self._get_detect_path())
 
 	def _get_detect_path(self):
+		'''Get the detect shell script, if it does not already exist, then return the path to invoke the script'''
 		logging.debug("Retrieving the Hub detect shell script")
 		detect_shell_script_path="/tmp/hub-detect.sh"
-		with open("/tmp/hub-detect.sh", 'w') as f:
-			curl_result = subprocess.run(["curl", "-s", "https://blackducksoftware.github.io/hub-detect/hub-detect.sh"], stdout=f)
-			chmod_result = subprocess.run(["chmod", "+x", detect_shell_script_path])
-			logging.debug("curl and chmod returncodes: %s, %s" % (curl_result.returncode, chmod_result.returncode))
-			return detect_shell_script_path
+		if not os.path.isfile(detect_shell_script_path):
+			with open("/tmp/hub-detect.sh", 'w') as f:
+				curl_result = subprocess.run(["curl", "-s", "https://blackducksoftware.github.io/hub-detect/hub-detect.sh"], stdout=f)
+				chmod_result = subprocess.run(["chmod", "+x", detect_shell_script_path])
+				logging.debug("curl and chmod returncodes: %s, %s" % (curl_result.returncode, chmod_result.returncode))
+		return detect_shell_script_path
 
 	def _get_overall_status(self, detect_output):
 		overall_status_search = re.search(r'Overall Status: ([A-Z_]+)', detect_output)
@@ -85,6 +87,21 @@ class HubDetectWrapper:
 			component_info['total_components'] = 'None found'
 		return component_info
 
+	def _scanner_disabled_search(self, detect_output):
+		return re.search(
+			r'--detect.blackduck.signature.scanner.disabled=true', 
+			detect_output, re.DOTALL)
+
+	def _uploading_search(self, detect_output):
+		return re.search(
+				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- uploading', 
+				detect_output, re.DOTALL)
+
+	def _completed_scans_search(self, detect_output):
+		return re.search(
+				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- Completed the.*[Ss]can.*', 
+				detect_output, re.DOTALL)
+
 	def _get_local_processing_time(self, detect_output):
 		'''Local processing time is the time from when hub-detect connects to the Hub server until
 		it has completed all local work such as signature scanning, or processing package manager files
@@ -93,17 +110,11 @@ class HubDetectWrapper:
 			r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- Successfully connected', 
 			detect_output, re.DOTALL)
 
-		signature_scanner_disabled_search = re.search(
-			r'--detect.blackduck.signature.scanner.disabled=true', 
-			detect_output, re.DOTALL)
+		signature_scanner_disabled_search = self._scanner_disabled_search(detect_output)
 		if signature_scanner_disabled_search:
-			end_search = re.search(
-				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- uploading', 
-				detect_output, re.DOTALL)
+			end_search = self._uploading_search(detect_output)
 		else:
-			end_search = re.search(
-				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- Completed the Hub signature scans', 
-				detect_output, re.DOTALL)
+			end_search = self._completed_scans_search(detect_output)
 
 		if connected_search and end_search:
 			begin = datetime.fromisoformat(connected_search.group(1))
@@ -116,19 +127,14 @@ class HubDetectWrapper:
 	def _get_server_processing_time(self, detect_output):
 		'''Server processing time is the time after local processing has finished until we get the results
 		back from the Hub server such as when using the policy check on hub-detect, or generating a PDF risk
-		report as part of the scan
+		report as part of the scans
 		'''
-		signature_scanner_disabled_search = re.search(
-			r'--detect.blackduck.signature.scanner.disabled=true', 
-			detect_output, re.DOTALL)
+		signature_scanner_disabled_search = self._scanner_disabled_search(detect_output)
 		if signature_scanner_disabled_search:
-			begin_search = re.search(
-				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- uploading', 
-				detect_output, re.DOTALL)
+			begin_search = self._uploading_search(detect_output)
 		else:
-			begin_search = re.search(
-				r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- Completed the Hub signature scans', 
-				detect_output, re.DOTALL)
+			begin_search = self._completed_scans_search(detect_output)
+
 		bom_updated_search = re.search(
 			r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) INFO  \[main\] --- The BOM has been updated', 
 			detect_output, re.DOTALL)
@@ -191,8 +197,8 @@ class HubDetectWrapper:
 			return [self.hub_detect_path]
 
 	def _determine_subprocess_options(self):
-		# options = self._get_shell_script_or_jar_file_options()
-		options = ["detect"]
+		options = self._get_shell_script_or_jar_file_options()
+		# options = ["detect"]
 		if self.blackduck_token == "undefined" or self.blackduck_token == "":
 			options.extend([
 				'--blackduck.url=%s' % self.blackduck_url,

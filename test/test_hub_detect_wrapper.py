@@ -205,6 +205,7 @@ class TestHubDetectWrapper(unittest.TestCase):
 		 # 9:57:31 9:57:04 
 		 ('detect-without-policy-check.txt', {'local_processing': 43.0}), 
 		 ('detect-with-policy-check.txt', {'local_processing': 30.0}),
+		 ('detect-430-with-policy-check.txt', {'local_processing': 51.0}),
 		 ('detect-with-policy-check-and-policy-failures.txt', {'local_processing': 32.0}),
 		 ('detect-with-risk-report.txt', {'local_processing': 32.0}),
 		 ('detect-with-snippet-matching.txt', {'local_processing': 38.0}),
@@ -217,6 +218,7 @@ class TestHubDetectWrapper(unittest.TestCase):
 		detect_test_log_files_and_expected_results = [
 		 ('detect-without-policy-check.txt', {'server_processing': 'Not available'}), 
 		 ('detect-with-policy-check.txt', {'server_processing': 26.0}),
+		 ('detect-430-with-policy-check.txt', {'server_processing': 107.0}),
 		 ('detect-with-policy-check-and-policy-failures.txt', {'server_processing': 20.0}),
 		 ('detect-with-risk-report.txt', {'server_processing': 25.0}),
 		 ('detect-with-snippet-matching.txt', {'server_processing': 'Not available'}),
@@ -256,20 +258,10 @@ class TestHubDetectWrapper(unittest.TestCase):
 			with open(detect_log_file, 'r') as f:
 				detect_output = f.read()
 				wrapper = HubDetectWrapper(self.fake_url)
-				results = wrapper._parse_detect_output_to_get_results(detect_output)
+				results = wrapper._parse_detect_output_to_get_results(detect_output, 'dummy-path')
 				# print(results)
 				self.assertTrue(all([key in results for key in ALL_RESULT_KEYS]))
 
-	def test_parse_detect_output_to_get_results(self):
-		detect_test_log_files_and_expected_results = [
-		 ('detect-without-policy-check.txt', {'overall_status': 'SUCCESS', 'policy_violation': 'Policy check not used', 'elapsed_time_from_detect': 44.655, 'components_in_violation': 'None found', 'components_in_violation_overridden': 'None found', 'components_not_in_violation': 'None found', 'total_components': 'None found', 'local_processing': 43.0, 'server_processing': 'Not available'}), 
-		 ('detect-with-policy-check.txt', {'overall_status': 'SUCCESS', 'policy_violation': 'NOT_IN_VIOLATION', 'elapsed_time_from_detect': 58.141, 'components_in_violation': 0, 'components_in_violation_overridden': 0, 'components_not_in_violation': 78, 'total_components': 78, 'local_processing': 30.0, 'server_processing': 26.0}),
-		 ('detect-with-policy-check-and-policy-failures.txt', {'overall_status': 'FAILURE_POLICY_VIOLATION', 'policy_violation': 'IN_VIOLATION', 'elapsed_time_from_detect': 53.786, 'components_in_violation': 'None found', 'components_in_violation_overridden': 'None found', 'components_not_in_violation': 'None found', 'total_components': 'None found', 'local_processing': 32.0, 'server_processing': 20.0}),
-		 ('detect-with-risk-report.txt', {'overall_status': 'SUCCESS', 'policy_violation': 'Policy check not used', 'elapsed_time_from_detect': 60.53, 'components_in_violation': 'None found', 'components_in_violation_overridden': 'None found', 'components_not_in_violation': 'None found', 'total_components': 'None found', 'local_processing': 32.0, 'server_processing': 25.0}),
-		 ('detect-with-snippet-matching.txt',{'overall_status': 'SUCCESS', 'policy_violation': 'Policy check not used', 'elapsed_time_from_detect': 40.332, 'components_in_violation': 'None found', 'components_in_violation_overridden': 'None found', 'components_not_in_violation': 'None found', 'total_components': 'None found', 'local_processing': 38.0, 'server_processing': 'Not available'}),
-		 ('detect-with-402-error.txt', {'overall_status': 'FAILURE_GENERAL_ERROR', 'policy_violation': 'Policy check not used', 'elapsed_time_from_detect': 5.383, 'components_in_violation': 'None found', 'components_in_violation_overridden': 'None found', 'components_not_in_violation': 'None found', 'total_components': 'None found', 'local_processing': 'Not available', 'server_processing': 'Not available'}),
-		]
-		self.check_the_parsing(detect_test_log_files_and_expected_results, '_parse_detect_output_to_get_results')
 
 
 
