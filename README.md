@@ -8,6 +8,8 @@ The Hub performance probe can either be run directly using python 3.4+ OR can be
 
 ## To build ##
 
+[![Build Status](https://travis-ci.org/blackducksoftware/hub-performance-probe.svg?branch=master)](https://travis-ci.org/blackducksoftware/hub-performance-probe)
+
 ```
 docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
 ```
