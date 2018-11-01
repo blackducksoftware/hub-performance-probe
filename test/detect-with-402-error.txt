@@ -1,0 +1,311 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    41  100    41    0     0    719      0 --:--:-- --:--:-- --:--:--   719
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100     5    0     5    0     0     29      0 --:--:-- --:--:-- --:--:--    29
+will look for : https://test-repo.blackducksoftware.com/artifactory/bds-integrations-release/com/blackducksoftware/integration/hub-detect/4.2.1/hub-detect-4.2.1.jar
+You have already downloaded the latest file, so the local file will be used.
+running detect: java  -jar /tmp/hub-detect-4.2.1.jar  --blackduck.url=https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com --blackduck.username=sysadmin --blackduck.password=<redacted> --detect.project.name=struts-showcase-no-options-thread0 --detect.project.version.name=2.3.2 --detect.source.path=./test_projects/showcase --detect.output.path=/var/log/hub_probe_outputs/./struts-showcase-no-options-thread0_output --blackduck.trust.cert=true
+
+
+                   `.:/oo/-`                 
+                 `+dNNMMMMNmy:     `-+`      
+                -dNMMMMMMMMMMNy:../dmd.      
+               .dNMMMMMMMMMMMMMNNNNNN+       
+               +NNMMMMMMMMMMMMMMMMMNm-``     
+               oNMMMMMMMMMMMMMMMMMMMNmhy/`   
+               /NNMMMMMMMMMMMMMMMMMMMmy/.    ______     _            _
+               `yNMMMMMMMMMMMMMMMMMNy:`      |  _  \   | |          | |
+                .hNMMMMMMMMMMMMMMMN+`        | | | |___| |_ ___  ___| |_
+  `.`            `+hNMMMMMMMMMMMMNd`         | | | / _ \ __/ _ \/ __| __|
+ .hmhs:`           `/mNMMMMMMMMMMMm+.`       | |/ /  __/ ||  __/ (__| |_
+ :NMMNNdyo//+osyhhhyhNMMMMMMMMMMMMMNmh+-     |___/ \___|\__\___|\___|\__|
+ -NMMMMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMNms-   
+ `dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNm:` 
+  oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd.   
+  .mNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   /mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   `/NNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNh`   
+     -smNMMNNNMMMMMMMMMMMMMMMMMMMMMMMNNNds.  
+       `.--::////+++ooooooooooo++////::-`
+
+
+2018-09-26 12:38:53 INFO  [main] --- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6f79caec: startup date [Wed Sep 26 12:38:53 EDT 2018]; root of context hierarchy
+2018-09-26 12:38:53 INFO  [main] --- Overriding bean definition for bean 'sbtResolutionCacheExtractor' with a different definition: replacing [Generic bean: class [com.blackducksoftware.integration.hub.detect.bomtool.sbt.SbtResolutionCacheExtractor]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/private/tmp/hub-detect-4.2.1.jar!/BOOT-INF/classes!/com/blackducksoftware/integration/hub/detect/bomtool/sbt/SbtResolutionCacheExtractor.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=beanConfiguration; factoryMethodName=sbtResolutionCacheExtractor; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/blackducksoftware/integration/hub/detect/BeanConfiguration.class]]
+2018-09-26 12:38:54 INFO  [main] --- Registering beans for JMX exposure on startup
+2018-09-26 12:38:54 INFO  [main] --- You seem to be running in a MAC operating system.
+
+Detect Version: 4.2.1
+
+2018-09-26 12:38:54 INFO  [main] --- Configuration processed completely.
+
+Current property values:
+--property = value [notes]
+------------------------------------------------------------
+blackduck.hub.offline.mode = false
+blackduck.hub.password = *********
+blackduck.hub.timeout = 120
+blackduck.hub.trust.cert = true [copied]
+blackduck.hub.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com [copied]
+blackduck.hub.username = sysadmin [copied]
+blackduck.offline.mode = false
+blackduck.password = *********
+blackduck.timeout = 120
+blackduck.trust.cert = true
+blackduck.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+blackduck.username = sysadmin
+detect.api.timeout = 300000
+detect.bdio.output.path = /private/var/log/hub_probe_outputs/struts-showcase-no-options-thread0_output/bdio [calculated]
+detect.blackduck.signature.scanner.disabled = false
+detect.blackduck.signature.scanner.dry.run = false
+detect.blackduck.signature.scanner.exclusion.name.patterns = node_modules
+detect.blackduck.signature.scanner.memory = 4096
+detect.blackduck.signature.scanner.parallel.processors = 1
+detect.blackduck.signature.scanner.snippet.mode = false
+detect.bom.tool.search.continue = false
+detect.bom.tool.search.depth = 0
+detect.bom.tool.search.exclusion = bin,build,.git,.gradle,node_modules,out,packages,target [calculated]
+detect.bom.tool.search.exclusion.defaults = true
+detect.cleanup = true
+detect.default.project.version.scheme = text
+detect.default.project.version.text = Default Detect Version
+detect.default.project.version.timeformat = yyyy-MM-dd\'T\'HH:mm:ss.SSS
+detect.disable.without.blackduck = false
+detect.disable.without.hub = false
+detect.docker.inspector.air.gap.path = /private/tmp/packaged-inspectors/docker [calculated]
+detect.docker.inspector.version = latest
+detect.docker.path.required = true
+detect.force.success = false
+detect.go.run.dep.init = false
+detect.gradle.inspector.air.gap.path = /private/tmp/packaged-inspectors/gradle [calculated]
+detect.gradle.inspector.version = latest
+detect.hub.signature.scanner.disabled = false
+detect.hub.signature.scanner.dry.run = false
+detect.hub.signature.scanner.exclusion.name.patterns = node_modules
+detect.hub.signature.scanner.memory = 4096
+detect.hub.signature.scanner.parallel.processors = 1
+detect.hub.signature.scanner.snippet.mode = false
+detect.notices.report = false
+detect.notices.report.path = .
+detect.npm.include.dev.dependencies = true
+detect.nuget.ignore.failure = false
+detect.nuget.inspector.air.gap.path = /private/tmp/packaged-inspectors/nuget [calculated]
+detect.nuget.inspector.name = IntegrationNugetInspector
+detect.nuget.inspector.version = latest
+detect.nuget.packages.repo.url = https://www.nuget.org/api/v2/
+detect.output.path = /var/log/hub_probe_outputs/./struts-showcase-no-options-thread0_output
+detect.packagist.include.dev.dependencies = true
+detect.pear.only.required.deps = false
+detect.project.clone.categories = COMPONENT_DATA,VULN_DATA
+detect.project.codelocation.unmap = false
+detect.project.level.adjustments = true
+detect.project.name = struts-showcase-no-options-thread0
+detect.project.version.distribution = External
+detect.project.version.name = 2.3.2
+detect.project.version.phase = Development
+detect.project.version.update = false
+detect.python.python3 = false
+detect.resolve.tilde.in.paths = true
+detect.risk.report.pdf = false
+detect.risk.report.pdf.path = .
+detect.scan.output.path = /private/var/log/hub_probe_outputs/struts-showcase-no-options-thread0_output/scan [calculated]
+detect.search.depth = 3
+detect.source.path = /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase [./test_projects/showcase]
+detect.suppress.configuration.output = false
+detect.suppress.results.output = false
+detect.test.connection = false
+detect.yarn.prod.only = false
+logging.level.com.blackducksoftware.integration = INFO
+------------------------------------------------------------
+
+2018-09-26 12:38:56 INFO  [main] --- Successfully connected to Hub (version 4.8.3)!
+2018-09-26 12:38:56 INFO  [main] --- Starting search for bom tools.
+2018-09-26 12:38:56 INFO  [main] --- Searching directory: /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- Search results
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase
+2018-09-26 12:38:56 INFO  [main] --- 	APPLIES: MAVEN - Pom file
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:56 INFO  [main] --- Detailed search results for directory
+2018-09-26 12:38:56 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase
+2018-09-26 12:38:56 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:56 INFO  [main] ---       APPLIED: MAVEN - Pom file: Search: Passed. Applicable: Passed.
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: CLANG - Clang: No file was found with pattern: compile_commands.json
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: COCOAPODS - Podlock: No file was found with pattern: Podfile.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: CONDA - Conda Cli: No file was found with pattern: environment.yml
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: CPAN - Cpan Cli: No file was found with pattern: Makefile.PL
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: CRAN - Packrat Lock: No file was found with pattern: packrat.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: DOCKER - Docker: The properties are insufficient to run.
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Cli: No file was found with pattern: *.go
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Lock: No file was found with pattern: Gopkg.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: GO_VNDR - Vendor Config: No file was found with pattern: vendor.conf
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: GRADLE - Gradle Inspector: No file was found with pattern: build.gradle
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: HEX - Rebar Config: No file was found with pattern: rebar.config
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: MAVEN - Pom wrapper file: No file was found with pattern: pom.groovy
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: NPM - Npm Cli: No file was found with pattern: package.json
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: NPM - Package Lock: No file was found with pattern: package-lock.json
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: NPM - Shrinkwrap: No file was found with pattern: npm-shrinkwrap.json
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: NUGET - Project: No files were found with any of the patterns: *.csproj,*.fsproj,*.vbproj,*.asaproj,*.dcproj,*.shproj,*.ccproj,*.sfproj,*.njsproj,*.vcxproj,*.vcproj,*.xproj,*.pyproj,*.hiveproj,*.pigproj,*.jsproj,*.usqlproj,*.deployproj,*.msbuildproj,*.sqlproj,*.dbproj,*.rproj
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: NUGET - Solution: No files were found with any of the patterns: *.sln
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: PACKAGIST - Composer Lock: No file was found with pattern: composer.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: PEAR - Pear Cli: No file was found with pattern: package.xml
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: PIP - Pip Inspector: No file was found with pattern: setup.py
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: PIP - Pipenv Graph: No files were found with any of the patterns: Pipfile,Pipfile.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: RUBYGEMS - Gemlock: No file was found with pattern: Gemfile.lock
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: SBT - Build SBT: No file was found with pattern: build.sbt
+2018-09-26 12:38:56 INFO  [main] --- DID NOT APPLY: YARN - Yarn Lock: No file was found with pattern: yarn.lock
+2018-09-26 12:38:56 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- Preparation for extraction
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase
+2018-09-26 12:38:56 INFO  [main] --- 	 READY: MAVEN - Pom file
+2018-09-26 12:38:56 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- 
+2018-09-26 12:38:56 INFO  [main] --- Extracting 1 of 1 (0%)
+2018-09-26 12:38:56 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:56 INFO  [main] --- Starting extraction: MAVEN - Pom file
+2018-09-26 12:38:56 INFO  [main] --- Identifier: MAVEN-0
+2018-09-26 12:38:56 INFO  [main] --- mavenExe : /usr/local/bin/mvn
+2018-09-26 12:38:56 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:56 INFO  [main] --- Running executable >/usr/local/bin/mvn dependency:tree
+2018-09-26 12:38:57 INFO  [main-Executable_Stream_Thread] --- [INFO] Scanning for projects...
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] 
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] -----------------< org.apache.struts:struts2-showcase >-----------------
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] Building Struts 2 Showcase Webapp 2.3.30
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] --------------------------------[ war ]---------------------------------
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] 
+2018-09-26 12:38:58 INFO  [main-Executable_Stream_Thread] --- [INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ struts2-showcase ---
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] org.apache.struts:struts2-showcase:war:2.3.30
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-struts1-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.struts:struts-core:jar:1.3.10:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- antlr:antlr:jar:2.7.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- commons-chain:commons-chain:jar:1.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-dojo-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-jsf-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-config-browser-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-sitemesh-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-tiles-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-core:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  +- org.apache.tiles:tiles-api:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.slf4j:jcl-over-slf4j:jar:1.5.8:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |     \- org.slf4j:slf4j-api:jar:1.7.12:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-servlet:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-freemarker:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-ognl:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.tiles:tiles-el:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-dwr-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-json-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.commons:commons-lang3:jar:3.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.tiles:tiles-jsp:jar:2.2.2:runtime
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.tiles:tiles-template:jar:2.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-convention-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-spring-plugin:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-beans:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-core:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.springframework:spring-asm:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-context:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  +- org.springframework:spring-aop:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.springframework:spring-expression:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.springframework:spring-web:jar:3.0.5.RELEASE:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- aopalliance:aopalliance:jar:1.0:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- javax.servlet:servlet-api:jar:2.4:provided
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.velocity:velocity:jar:1.6.4:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-collections:commons-collections:jar:3.2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-lang:commons-lang:jar:2.4:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- oro:oro:jar:2.0.8:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.velocity:velocity-tools:jar:1.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-beanutils:commons-beanutils:jar:1.7.0:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-digester:commons-digester:jar:2.0:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-validator:commons-validator:jar:1.3.1:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- sslext:sslext:jar:1.2-0:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- opensymphony:sitemesh:jar:2.4.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- uk.ltd.getahead:dwr:jar:1.1.1:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- log4j:log4j:jar:1.2.17:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- commons-logging:commons-logging:jar:1.1.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.myfaces.core:myfaces-impl:jar:1.1.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-el:commons-el:jar:1.0:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-codec:commons-codec:jar:1.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.myfaces.core:myfaces-api:jar:1.1.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- javax.servlet:jstl:jar:1.1.2:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- commons-fileupload:commons-fileupload:jar:1.3.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-io:commons-io:jar:2.2:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- net.sourceforge.jwebunit:jwebunit-core:jar:1.4.1:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- junit:junit:jar:4.8.2:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- regexp:regexp:jar:1.3:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- commons-httpclient:commons-httpclient:jar:3.1:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:jar:1.4.1:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- htmlunit:htmlunit:jar:1.11:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- jaxen:jaxen:jar:1.1:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     |  +- dom4j:dom4j:jar:1.6.1:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     |  +- jdom:jdom:jar:1.0:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     |  \- xml-apis:xml-apis:jar:1.3.02:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- rhino:js:jar:1.6R5:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- xerces:xercesImpl:jar:2.10.0:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- xerces:xmlParserAPIs:jar:2.6.2:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- nekohtml:nekohtml:jar:0.9.5:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-core:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.struts.xwork:xwork-core:jar:2.3.30:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  +- asm:asm:jar:3.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- asm:asm-commons:jar:3.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |     \- asm:asm-tree:jar:3.3:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.freemarker:freemarker:jar:2.3.22:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- ognl:ognl:jar:3.0.19:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- javassist:javassist:jar:3.11.0.GA:compile
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] \- org.springframework:spring-test:jar:3.0.5.RELEASE:test
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] BUILD SUCCESS
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] Total time: 1.540 s
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] Finished at: 2018-09-26T12:38:59-04:00
+2018-09-26 12:38:59 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-09-26 12:38:59 INFO  [main] --- Executable finished: 0
+2018-09-26 12:38:59 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:59 INFO  [main] --- Finished extraction: SUCCESS
+2018-09-26 12:38:59 INFO  [main] --- Code locations found: 1
+2018-09-26 12:38:59 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:38:59 INFO  [main] --- Exactly one unique bom tool was found. Using MAVEN found at depth 0 as project info.
+2018-09-26 12:38:59 INFO  [main] --- BDIO Generated: /private/var/log/hub_probe_outputs/struts-showcase-no-options-thread0_output/bdio/showcase_struts2_showcase_org_apache_struts_struts2_showcase_2_3_30_maven_bom.jsonld
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:59 INFO  [main] --- Extraction results:
+2018-09-26 12:38:59 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:59 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/showcase
+2018-09-26 12:38:59 INFO  [main] --- 	Code locations: 1
+2018-09-26 12:38:59 INFO  [main] --- 		showcase/struts2-showcase/org.apache.struts/struts2-showcase/2.3.30 maven/bom
+2018-09-26 12:38:59 INFO  [main] --- 	Success: MAVEN - Pom file
+2018-09-26 12:38:59 INFO  [main] --- ======================================================================================================
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- Project Name: struts-showcase-no-options-thread0
+2018-09-26 12:38:59 INFO  [main] --- Project Version Name: 2.3.2
+2018-09-26 12:38:59 INFO  [main] --- uploading showcase_struts2_showcase_org_apache_struts_struts2_showcase_2_3_30_maven_bom.jsonld to https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+2018-09-26 12:38:59 ERROR [main] --- An unrecoverable error occurred - most likely this is due to your environment and/or configuration. Please double check the Hub Detect documentation: https://blackducksoftware.atlassian.net/wiki/x/Y7HtAg
+2018-09-26 12:38:59 ERROR [main] --- There was a problem trying to POST this item: https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com/api/bom-import. Error: 402 : 402
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- ======== Detect Results ========
+2018-09-26 12:38:59 INFO  [main] --- MAVEN: SUCCESS
+2018-09-26 12:38:59 INFO  [main] --- Overall Status: FAILURE_GENERAL_ERROR
+2018-09-26 12:38:59 INFO  [main] --- ================================
+2018-09-26 12:38:59 INFO  [main] --- 
+2018-09-26 12:38:59 INFO  [main] --- Hub-Detect run duration: 00h 00m 05s 383ms
+2018-09-26 12:38:59 ERROR [main] --- Exiting with code 99 - FAILURE_GENERAL_ERROR
+2018-09-26 12:38:59 INFO  [Thread-2] --- Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@6f79caec: startup date [Wed Sep 26 12:38:53 EDT 2018]; root of context hierarchy
+2018-09-26 12:38:59 INFO  [Thread-2] --- Unregistering JMX-exposed beans on shutdown
+Result code of 99, exiting

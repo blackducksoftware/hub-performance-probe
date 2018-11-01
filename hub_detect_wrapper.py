@@ -221,6 +221,7 @@ class HubDetectWrapper:
 		# run detect adjusting the environment to include DETECT_LATEST_RELEASE_VERSION if appropriate
 		my_env = os.environ.copy()
 		if self.detect_version != "latest":
+			logging.debug("setting DETECT_LATEST_RELEASE_VERSION to version {} of detect".format(self.detect_version))
 			my_env["DETECT_LATEST_RELEASE_VERSION"] = self.detect_version
 
 		result = subprocess.run(

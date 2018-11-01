@@ -24,7 +24,7 @@ BENCHMARKS = {
 		],
 		'detect_scanning_options': [
 			{'label': 'no-options', 'detect_options': []},
-			{'label': 'policy-check', 'detect_options': ['--detect.policy.check.fail.on.severities=true',]},
+			{'label': 'policy-check', 'detect_options': ['--detect.policy.check.fail.on.severities=ALL',]},
 			{'label': 'risk-report', 'detect_options': ['--detect.risk.report.pdf=true',]},
 			{'label': 'policy-and-risk', 'detect_options': ['--detect.policy.check.fail.on.severities=ALL', '--detect.risk.report.pdf=true',]},
 			{'label': 'no-sig-scanner', 'detect_options': ['--detect.blackduck.signature.scanner.disabled=true',]},	
@@ -59,7 +59,8 @@ class HubPerformanceProbe:
 			initial_threads=1,
 			iterations=2,
 			max_threads=-1,
-			detect_output_base_dir=None):
+			detect_output_base_dir=None,
+			detect_version="latest"):
 		self.blackduck_url = blackduck_url
 		self.blackduck_username = blackduck_username
 		self.blackduck_password = blackduck_password
@@ -75,6 +76,7 @@ class HubPerformanceProbe:
 		self.max_threads = max_threads if (max_threads > 0) else multiprocessing.cpu_count()
 		self.detect_output_base_dir = detect_output_base_dir
 		self.benchmarks = benchmarks
+		self.detect_version = detect_version
 
 	def _assemble_detect_options(self, test_config_d):
 		'''Given a test configuration assemble the Hub detection options required to run it
@@ -111,22 +113,29 @@ class HubPerformanceProbe:
 		for i in range(iterations):
 			logging.debug('iteration {} for project {}'.format(i + 1, test_config_d))
 
+			logging.debug("using detect version {}".format(self.detect_version))
+
 			hub_detect_wrapper = HubDetectWrapper(
 				self.blackduck_url, 
 				self.blackduck_username,
 				self.blackduck_password,
 				self.blackduck_api_token, 
+				detect_version = self.detect_version,
 				additional_detect_options=options)
 
 			thread_project_results = hub_detect_wrapper.run()
+			logging.debug("Got results back: {}".format(thread_project_results))
 			# Failures break CSV output. 
 			# I add 1 retry and if unsuccessful - exclude results
 			if (thread_project_results['returncode'] > 0):
+				logging.warning("Non-zero returncode on hub-detect, trying again...")
 				thread_project_results = hub_detect_wrapper.run()
 			if (thread_project_results['returncode'] == 0):
 				thread_project_results.update(test_config_d)
 				self.overall_results.append(thread_project_results)
 				logging.debug('results for project {} are {}'.format(test_config_d, thread_project_results))
+			else:
+				logging.error("Failed to get results for project {}, hub-detect results {}".format(test_config_d, thread_project_results))
 		logging.debug("thread exiting after performing {} iterations on project {}".format(iterations, test_config_d['project_name']))
 		
 	def _save_results_as_csv(self):
@@ -230,6 +239,7 @@ if __name__ == "__main__":
 	parser.add_argument("--password", default="blackduck")
 	parser.add_argument("--token", default="undefined", help="Use authentication token, this will ignore username and password options")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
+	parser.add_argument("--detect_version", default="latest")
 	parser.add_argument("--detectoutputbasedir", default="/var/log/hub_probe_outputs", help="Override where detect output files are written. Useful when running the probe inside a docker container and you wnat to write to a host mounted volume")
 	parser.add_argument("--description", help="A description that will be included in the test results")
 	parser.add_argument("--iterations", type=int, default=4)
@@ -256,6 +266,7 @@ if __name__ == "__main__":
 		csv_output_file=args.csvfile, 
 		iterations=args.iterations,
 		max_threads=args.maxthreads,
+		detect_version = args.detect_version,
 		detect_output_base_dir=args.detectoutputbasedir)
 	hpp.run()
 
