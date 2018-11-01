@@ -1,0 +1,285 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100    41  100    41    0     0    911      0 --:--:-- --:--:-- --:--:--   891
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100     5    0     5    0     0     26      0 --:--:-- --:--:-- --:--:--    26
+will look for : https://test-repo.blackducksoftware.com/artifactory/bds-integrations-release/com/blackducksoftware/integration/hub-detect/4.2.1/hub-detect-4.2.1.jar
+You have already downloaded the latest file, so the local file will be used.
+running detect: java  -jar /tmp/hub-detect-4.2.1.jar  --blackduck.url=https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com --blackduck.username=sysadmin --blackduck.password=<redacted> --detect.project.name=protex-tutorial-files-snippet-mode-thread0 --detect.project.version.name=1.0 --detect.source.path=./test_projects/Tutorial_Files --detect.output.path=/var/log/hub_probe_outputs/./protex-tutorial-files-snippet-mode-thread0_output --blackduck.trust.cert=true --detect.blackduck.signature.scanner.snippet.mode=true
+
+
+                   `.:/oo/-`                 
+                 `+dNNMMMMNmy:     `-+`      
+                -dNMMMMMMMMMMNy:../dmd.      
+               .dNMMMMMMMMMMMMMNNNNNN+       
+               +NNMMMMMMMMMMMMMMMMMNm-``     
+               oNMMMMMMMMMMMMMMMMMMMNmhy/`   
+               /NNMMMMMMMMMMMMMMMMMMMmy/.    ______     _            _
+               `yNMMMMMMMMMMMMMMMMMNy:`      |  _  \   | |          | |
+                .hNMMMMMMMMMMMMMMMN+`        | | | |___| |_ ___  ___| |_
+  `.`            `+hNMMMMMMMMMMMMNd`         | | | / _ \ __/ _ \/ __| __|
+ .hmhs:`           `/mNMMMMMMMMMMMm+.`       | |/ /  __/ ||  __/ (__| |_
+ :NMMNNdyo//+osyhhhyhNMMMMMMMMMMMMMNmh+-     |___/ \___|\__\___|\___|\__|
+ -NMMMMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMNms-   
+ `dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNm:` 
+  oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd.   
+  .mNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   /mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   `/NNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNh`   
+     -smNMMNNNMMMMMMMMMMMMMMMMMMMMMMMNNNds.  
+       `.--::////+++ooooooooooo++////::-`
+
+
+2018-09-26 12:39:34 INFO  [main] --- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@52d455b8: startup date [Wed Sep 26 12:39:34 EDT 2018]; root of context hierarchy
+2018-09-26 12:39:34 INFO  [main] --- Overriding bean definition for bean 'sbtResolutionCacheExtractor' with a different definition: replacing [Generic bean: class [com.blackducksoftware.integration.hub.detect.bomtool.sbt.SbtResolutionCacheExtractor]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/private/tmp/hub-detect-4.2.1.jar!/BOOT-INF/classes!/com/blackducksoftware/integration/hub/detect/bomtool/sbt/SbtResolutionCacheExtractor.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=beanConfiguration; factoryMethodName=sbtResolutionCacheExtractor; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/blackducksoftware/integration/hub/detect/BeanConfiguration.class]]
+2018-09-26 12:39:35 INFO  [main] --- Registering beans for JMX exposure on startup
+2018-09-26 12:39:35 INFO  [main] --- You seem to be running in a MAC operating system.
+
+Detect Version: 4.2.1
+
+2018-09-26 12:39:35 INFO  [main] --- Configuration processed completely.
+
+Current property values:
+--property = value [notes]
+------------------------------------------------------------
+blackduck.hub.offline.mode = false
+blackduck.hub.password = *********
+blackduck.hub.timeout = 120
+blackduck.hub.trust.cert = true [copied]
+blackduck.hub.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com [copied]
+blackduck.hub.username = sysadmin [copied]
+blackduck.offline.mode = false
+blackduck.password = *********
+blackduck.timeout = 120
+blackduck.trust.cert = true
+blackduck.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+blackduck.username = sysadmin
+detect.api.timeout = 300000
+detect.bdio.output.path = /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/bdio [calculated]
+detect.blackduck.signature.scanner.disabled = false
+detect.blackduck.signature.scanner.dry.run = false
+detect.blackduck.signature.scanner.exclusion.name.patterns = node_modules
+detect.blackduck.signature.scanner.memory = 4096
+detect.blackduck.signature.scanner.parallel.processors = 1
+detect.blackduck.signature.scanner.snippet.mode = true
+detect.bom.tool.search.continue = false
+detect.bom.tool.search.depth = 0
+detect.bom.tool.search.exclusion = bin,build,.git,.gradle,node_modules,out,packages,target [calculated]
+detect.bom.tool.search.exclusion.defaults = true
+detect.cleanup = true
+detect.default.project.version.scheme = text
+detect.default.project.version.text = Default Detect Version
+detect.default.project.version.timeformat = yyyy-MM-dd\'T\'HH:mm:ss.SSS
+detect.disable.without.blackduck = false
+detect.disable.without.hub = false
+detect.docker.inspector.air.gap.path = /private/tmp/packaged-inspectors/docker [calculated]
+detect.docker.inspector.version = latest
+detect.docker.path.required = true
+detect.force.success = false
+detect.go.run.dep.init = false
+detect.gradle.inspector.air.gap.path = /private/tmp/packaged-inspectors/gradle [calculated]
+detect.gradle.inspector.version = latest
+detect.hub.signature.scanner.disabled = false
+detect.hub.signature.scanner.dry.run = false
+detect.hub.signature.scanner.exclusion.name.patterns = node_modules
+detect.hub.signature.scanner.memory = 4096
+detect.hub.signature.scanner.parallel.processors = 1
+detect.hub.signature.scanner.snippet.mode = true [copied]
+detect.notices.report = false
+detect.notices.report.path = .
+detect.npm.include.dev.dependencies = true
+detect.nuget.ignore.failure = false
+detect.nuget.inspector.air.gap.path = /private/tmp/packaged-inspectors/nuget [calculated]
+detect.nuget.inspector.name = IntegrationNugetInspector
+detect.nuget.inspector.version = latest
+detect.nuget.packages.repo.url = https://www.nuget.org/api/v2/
+detect.output.path = /var/log/hub_probe_outputs/./protex-tutorial-files-snippet-mode-thread0_output
+detect.packagist.include.dev.dependencies = true
+detect.pear.only.required.deps = false
+detect.project.clone.categories = COMPONENT_DATA,VULN_DATA
+detect.project.codelocation.unmap = false
+detect.project.level.adjustments = true
+detect.project.name = protex-tutorial-files-snippet-mode-thread0
+detect.project.version.distribution = External
+detect.project.version.name = 1.0
+detect.project.version.phase = Development
+detect.project.version.update = false
+detect.python.python3 = false
+detect.resolve.tilde.in.paths = true
+detect.risk.report.pdf = false
+detect.risk.report.pdf.path = .
+detect.scan.output.path = /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan [calculated]
+detect.search.depth = 3
+detect.source.path = /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files [./test_projects/Tutorial_Files]
+detect.suppress.configuration.output = false
+detect.suppress.results.output = false
+detect.test.connection = false
+detect.yarn.prod.only = false
+logging.level.com.blackducksoftware.integration = INFO
+------------------------------------------------------------
+
+2018-09-26 12:39:37 INFO  [main] --- Successfully connected to Hub (version 4.8.3)!
+2018-09-26 12:39:37 INFO  [main] --- Starting search for bom tools.
+2018-09-26 12:39:37 INFO  [main] --- Searching directory: /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- Search results
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:39:37 INFO  [main] --- Detailed search results for directory
+2018-09-26 12:39:37 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:37 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: CLANG - Clang: No file was found with pattern: compile_commands.json
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: COCOAPODS - Podlock: No file was found with pattern: Podfile.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: CONDA - Conda Cli: No file was found with pattern: environment.yml
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: CPAN - Cpan Cli: No file was found with pattern: Makefile.PL
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: CRAN - Packrat Lock: No file was found with pattern: packrat.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: DOCKER - Docker: The properties are insufficient to run.
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Cli: No file was found with pattern: *.go
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Lock: No file was found with pattern: Gopkg.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: GO_VNDR - Vendor Config: No file was found with pattern: vendor.conf
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: GRADLE - Gradle Inspector: No file was found with pattern: build.gradle
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: HEX - Rebar Config: No file was found with pattern: rebar.config
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: MAVEN - Pom file: No file was found with pattern: pom.xml
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: MAVEN - Pom wrapper file: No file was found with pattern: pom.groovy
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: NPM - Npm Cli: No file was found with pattern: package.json
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: NPM - Package Lock: No file was found with pattern: package-lock.json
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: NPM - Shrinkwrap: No file was found with pattern: npm-shrinkwrap.json
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: NUGET - Project: No files were found with any of the patterns: *.csproj,*.fsproj,*.vbproj,*.asaproj,*.dcproj,*.shproj,*.ccproj,*.sfproj,*.njsproj,*.vcxproj,*.vcproj,*.xproj,*.pyproj,*.hiveproj,*.pigproj,*.jsproj,*.usqlproj,*.deployproj,*.msbuildproj,*.sqlproj,*.dbproj,*.rproj
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: NUGET - Solution: No files were found with any of the patterns: *.sln
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: PACKAGIST - Composer Lock: No file was found with pattern: composer.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: PEAR - Pear Cli: No file was found with pattern: package.xml
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: PIP - Pip Inspector: No file was found with pattern: setup.py
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: PIP - Pipenv Graph: No files were found with any of the patterns: Pipfile,Pipfile.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: RUBYGEMS - Gemlock: No file was found with pattern: Gemfile.lock
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: SBT - Build SBT: No file was found with pattern: build.sbt
+2018-09-26 12:39:37 INFO  [main] --- DID NOT APPLY: YARN - Yarn Lock: No file was found with pattern: yarn.lock
+2018-09-26 12:39:37 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- Preparation for extraction
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- No unique bom tool was found. Project info could not be found in a bom tool.
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- Extraction results:
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- ======================================================================================================
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- 
+2018-09-26 12:39:37 INFO  [main] --- Project Name: protex-tutorial-files-snippet-mode-thread0
+2018-09-26 12:39:37 INFO  [main] --- Project Version Name: 1.0
+2018-09-26 12:39:37 INFO  [main] --- No scan targets provided - registering the source path /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files to scan
+2018-09-26 12:39:37 INFO  [main] --- --> Log Level : INFO
+2018-09-26 12:39:37 INFO  [main] --- --> Using Hub Project Name : protex-tutorial-files-snippet-mode-thread0, Version : 1.0, Phase : DEVELOPMENT, Distribution : EXTERNAL
+2018-09-26 12:39:37 INFO  [main] --- --> Using Working Directory: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan
+2018-09-26 12:39:37 INFO  [main] --- --> Scanning the following targets:
+2018-09-26 12:39:37 INFO  [main] --- --> Target: /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:37 INFO  [main] ---     --> Code Location Name: Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan
+2018-09-26 12:39:37 INFO  [main] --- --> Scan Memory: 4096
+2018-09-26 12:39:37 INFO  [main] --- --> Dry Run: false
+2018-09-26 12:39:37 INFO  [main] --- --> Clean-up logs on success: true
+2018-09-26 12:39:37 INFO  [main] --- --> Enable Snippet Mode: true
+2018-09-26 12:39:37 INFO  [main] --- --> Additional Scan Arguments: 
+2018-09-26 12:39:37 INFO  [main] --- Starting the Hub signature scans
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- Starting the signature scan of /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- Hub CLI command :
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/tools/Hub_Scan_Installation/scan.cli-4.8.3/jre/Contents/Home/bin/java
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- -Done-jar.silent=true
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- -Done-jar.jar.path=/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/tools/Hub_Scan_Installation/scan.cli-4.8.3/lib/cache/scan.cli.impl-standalone.jar
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- -Xmx4096m
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- -jar
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/tools/Hub_Scan_Installation/scan.cli-4.8.3/lib/scan.cli-4.8.3-standalone.jar
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --no-prompt
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --scheme
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- https
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --host
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --username
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- sysadmin
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --port
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- 443
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --insecure
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- -v
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --logDir
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --statusWriteDir
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --project
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- protex-tutorial-files-snippet-mode-thread0
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --release
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- 1.0
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --name
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- --snippet-matching
+2018-09-26 12:39:37 INFO  [pool-2-thread-1] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:38 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Start wrapper: ScanCliWrapperSettings [commandLine=org.apache.commons.cli.CommandLine@255316f2, fileUriSet=null, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443]...
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Start scan loop: ScanClientSettings [commandLine=org.apache.commons.cli.CommandLine@1445d7f, fileUriSet=[file://gsnyder-mac/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files], dryRunWriteDir=No dry run file., dryRunReadFile=No dry run file., snippetMatching=true, snippetMatchingOnly=false, fullSnippetScan=false, logDir=/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443, name=Optional[Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan], project=Optional[protex-tutorial-files-snippet-mode-thread0], release=Optional[1.0], username=sysadmin, password=<NOT SHOWN>]...
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Initialize client for ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scans
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/scan-summaries
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scanstatus
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scans/signatureVersion
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/bom-import
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/internal/scans/{scanId}/unmatched-files?limit={limit}&offset={offset}
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/fp-import/scans/{scanId}
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/projects?q=name:{projname}&limit={limit}&offset={offset}
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Execute scan file://gsnyder-mac/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files....
+2018-09-26 12:39:40 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Scan engine initialized with niceness set to false
+2018-09-26 12:39:42 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Total time: 1 seconds to scan path: /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:39:42 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Post Scan...
+2018-09-26 12:39:43 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: ScanExecResult: ScanExecResult [scanClientSettings=ScanClientSettings [commandLine=org.apache.commons.cli.CommandLine@1445d7f, fileUriSet=[file://gsnyder-mac/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files], dryRunWriteDir=No dry run file., dryRunReadFile=No dry run file., snippetMatching=true, snippetMatchingOnly=false, fullSnippetScan=false, logDir=/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443, name=Optional[Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan], project=Optional[protex-tutorial-files-snippet-mode-thread0], release=Optional[1.0], username=sysadmin, password=<NOT SHOWN>], result=0, dataFileName=null, scanContainer=ScanContainerView{scanId=63b0e80e-893f-495f-ac33-fb87af9e96de, createdOn=2018-09-26T16:39:40.305Z, timeToScan=1544, scannerVersion=4.8.3, signatureVersion=7.0.0, hostName=gsnyder-mac, ownerEntityKeyToken=SN#gsnyder-mac-Tutorial_Files, baseDir=/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files, name=Optional[Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan], project=Optional[protex-tutorial-files-snippet-mode-thread0], release=Optional[1.0], scanProblem=null, scanProblemList.size()=0, scanNodeList.size()=2467}, scanResult=ScanView{id=63b0e80e-893f-495f-ac33-fb87af9e96de, scannerVersion=4.8.3, signatureVersion=7.0.0, name=Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan, hostName=gsnyder-mac, ownerEntityKeyToken=SN#gsnyder-mac-Tutorial_Files, baseDir=/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files, createdOn=2018-09-26T16:39:40.305Z, lastModifiedOn=2018-09-26T16:39:43.469Z, timeToScan=1544, createdByUserId=00000000-0000-0000-0001-000000000001, matchCount=0, numDirs=230, numNonDirFiles=2227, status=REQUESTED_MATCH_JOB, deepSystemSize=Optional.empty, scanSourceType=SN, scanSourceId=gsnyder-mac-Tutorial_Files, timeLastModified=1537979983469, timeToPersistMs=183, scanTime=1537979980305}, scanSummary=com.blackducksoftware.scan.api.ScanSummaryView@194ccf2b, scanDate=Wed Sep 26 12:39:40 EDT 2018, scanEndDate=Wed Sep 26 12:39:43 EDT 2018, scanCreated=true]
+2018-09-26 12:40:13 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: IScan is finished. Starting calculation of fingerprints for unmatched files...
+2018-09-26 12:40:13 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Scan engine initialized with niceness set to true
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: 51 of unmatched files is found
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Fingerprints for unmatched files are calculated. Importing fingerprints to the server...
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Total time: 1 seconds to scan path: /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: FingerprintScanExecResult : ScanExecResult [scanClientSettings=ScanClientSettings [commandLine=org.apache.commons.cli.CommandLine@1445d7f, fileUriSet=[file://gsnyder-mac/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files], dryRunWriteDir=No dry run file., dryRunReadFile=No dry run file., snippetMatching=true, snippetMatchingOnly=false, fullSnippetScan=false, logDir=/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443, name=Optional[Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan], project=Optional[protex-tutorial-files-snippet-mode-thread0], release=Optional[1.0], username=sysadmin, password=<NOT SHOWN>], result=0, dataFileName=null, scanContainer=ScanContainerView{scanId=fe42b9e4-0c4b-438b-af77-c33975c119a1, createdOn=2018-09-26T16:40:13.827Z, timeToScan=1684, scannerVersion=4.8.3, signatureVersion=7.0.0, hostName=gsnyder-mac, ownerEntityKeyToken=SP#gsnyder-mac-Tutorial_Files, baseDir=/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files, name=Optional[Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan], project=Optional[protex-tutorial-files-snippet-mode-thread0], release=Optional[1.0], scanProblem=null, scanProblemList.size()=0, scanNodeList.size()=2467}, scanResult=ScanView{id=fe42b9e4-0c4b-438b-af77-c33975c119a1, scannerVersion=4.8.3, signatureVersion=7.0.0, name=Tutorial_Files/protex-tutorial-files-snippet-mode-thread0/1.0 scan, hostName=gsnyder-mac, ownerEntityKeyToken=SP#gsnyder-mac-Tutorial_Files, baseDir=/Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files, createdOn=2018-09-26T16:40:13.827Z, lastModifiedOn=2018-09-26T16:40:13.930Z, timeToScan=0, createdByUserId=00000000-0000-0000-0001-000000000001, matchCount=0, numDirs=0, numNonDirFiles=51, status=SCANNING, deepSystemSize=Optional.empty, scanSourceType=SP, scanSourceId=gsnyder-mac-Tutorial_Files, timeLastModified=1537980013930, timeToPersistMs=0, scanTime=1537980013827}, scanSummary=com.blackducksoftware.scan.api.ScanSummaryView@86acd36b, scanDate=Wed Sep 26 12:40:13 EDT 2018, scanEndDate=Wed Sep 26 12:40:15 EDT 2018, scanCreated=true]
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/log/gsnyder-mac-Tutorial_Files-2018-09-26T163940.305Z.log
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Logging to file:
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/log/gsnyder-mac-Tutorial_Files-2018-09-26T164013.827Z.log
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Logging to file:
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/status/gsnyder-mac-Tutorial_Files-2018-09-26T163940.305Z.json
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Persist ScanSummary to file...
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Persisted status: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/status/gsnyder-mac-Tutorial_Files-2018-09-26T163940.305Z.json
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/status/gsnyder-mac-Tutorial_Files-2018-09-26T164013.827Z.json
+2018-09-26 12:40:15 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Persist ScanSummary to file...
+2018-09-26 12:40:15 INFO  [pool-2-thread-1] --- INFO: Persisted status: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/status/gsnyder-mac-Tutorial_Files-2018-09-26T164013.827Z.json
+2018-09-26 12:40:15 INFO  [pool-2-thread-1] --- Logging to file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/log/gsnyder-mac-Tutorial_Files-2018-09-26T163940.305Z.log
+Logging to file: /private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/log/gsnyder-mac-Tutorial_Files-2018-09-26T164013.827Z.log
+
+2018-09-26 12:40:15 INFO  [pool-2-thread-1] --- Hub CLI return code : 0
+2018-09-26 12:40:15 INFO  [pool-2-thread-1] --- You can view the BlackDuck Scan CLI logs at : '/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15'
+2018-09-26 12:40:15 ERROR [pool-2-thread-1] --- There were should have only been 1 status file in '/private/var/log/hub_probe_outputs/protex-tutorial-files-snippet-mode-thread0_output/scan/HubScanLogs/2018-09-26_16-39-37-550_15/status' but there are 2
+2018-09-26 12:40:15 INFO  [pool-2-thread-1] --- Completed the signature scan of /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files
+2018-09-26 12:40:15 INFO  [main] --- Completed the Hub signature scans
+2018-09-26 12:40:15 INFO  [main] --- Starting the post scan steps
+2018-09-26 12:40:15 INFO  [main] --- Completed the post scan steps
+2018-09-26 12:40:15 INFO  [main] --- /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files was successfully scanned by the BlackDuck CLI.
+2018-09-26 12:40:16 INFO  [main] --- To see your results, follow the URL: https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com/api/projects/1c6c2b7c-c902-46f7-b12d-43923c32ea5f/versions/b5c62f0a-d04e-4f59-8b9c-85948484b866/components
+2018-09-26 12:40:16 INFO  [main] --- 
+2018-09-26 12:40:16 INFO  [main] --- 
+2018-09-26 12:40:16 INFO  [main] --- ======== Detect Results ========
+2018-09-26 12:40:16 INFO  [main] --- Scan Target /Users/gsnyder/Projects/hub-performance-probe/test_projects/Tutorial_Files: SUCCESS
+2018-09-26 12:40:16 INFO  [main] --- Overall Status: SUCCESS
+2018-09-26 12:40:16 INFO  [main] --- ================================
+2018-09-26 12:40:16 INFO  [main] --- 
+2018-09-26 12:40:16 INFO  [main] --- Hub-Detect run duration: 00h 00m 40s 332ms
+2018-09-26 12:40:16 INFO  [Thread-2] --- Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@52d455b8: startup date [Wed Sep 26 12:39:34 EDT 2018]; root of context hierarchy
+2018-09-26 12:40:16 INFO  [Thread-2] --- Unregistering JMX-exposed beans on shutdown
+Result code of 0, exiting

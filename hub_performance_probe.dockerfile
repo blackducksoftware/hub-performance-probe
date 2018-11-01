@@ -3,7 +3,6 @@
 #
 FROM python:3
 
-# TODO: Install java 8+ and set it up so hub detect works properly
 # derived from https://linux-tips.com/t/how-to-install-java-8-on-debian-jessie/349
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-java.list && echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /etc/apt/sources.list.d/webupd8team-java.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
@@ -26,7 +25,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY *.py ./
-
 
 # see https://blog.codeship.com/understanding-dockers-cmd-and-entrypoint-instructions/
 ENTRYPOINT ["python", "hub_performance_probe.py"]

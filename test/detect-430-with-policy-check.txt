@@ -1,0 +1,1247 @@
+will look for : https://test-repo.blackducksoftware.com/artifactory/bds-integrations-release/com/blackducksoftware/integration/hub-detect/4.3.0/hub-detect-4.3.0.jar
+You have already downloaded the latest file, so the local file will be used.
+running detect: java  -jar /tmp/hub-detect-4.3.0.jar  --blackduck.url=https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com --blackduck.username=sysadmin --blackduck.password=<redacted> --blackduck.trust.cert=true --detect.policy.check.fail.on.severities=ALL
+
+
+                   `.:/oo/-`                 
+                 `+dNNMMMMNmy:     `-+`      
+                -dNMMMMMMMMMMNy:../dmd.      
+               .dNMMMMMMMMMMMMMNNNNNN+       
+               +NNMMMMMMMMMMMMMMMMMNm-``     
+               oNMMMMMMMMMMMMMMMMMMMNmhy/`   
+               /NNMMMMMMMMMMMMMMMMMMMmy/.    ______     _            _
+               `yNMMMMMMMMMMMMMMMMMNy:`      |  _  \   | |          | |
+                .hNMMMMMMMMMMMMMMMN+`        | | | |___| |_ ___  ___| |_
+  `.`            `+hNMMMMMMMMMMMMNd`         | | | / _ \ __/ _ \/ __| __|
+ .hmhs:`           `/mNMMMMMMMMMMMm+.`       | |/ /  __/ ||  __/ (__| |_
+ :NMMNNdyo//+osyhhhyhNMMMMMMMMMMMMMNmh+-     |___/ \___|\__\___|\___|\__|
+ -NMMMMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMNms-   
+ `dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNm:` 
+  oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd.   
+  .mNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   /mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:   
+   `/NNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNh`   
+     -smNMMNNNMMMMMMMMMMMMMMMMMMMMMMMNNNds.  
+       `.--::////+++ooooooooooo++////::-`
+
+
+2018-10-02 23:42:26 INFO  [main] --- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6aceb1a5: startup date [Tue Oct 02 23:42:26 EDT 2018]; root of context hierarchy
+2018-10-02 23:42:27 INFO  [main] --- Registering beans for JMX exposure on startup
+2018-10-02 23:42:27 INFO  [main] --- You seem to be running in a MAC operating system.
+
+Detect Version: 4.3.0
+
+2018-10-02 23:42:28 INFO  [main] --- Configuration processed completely.
+
+Current property values:
+--property = value [notes]
+------------------------------------------------------------
+blackduck.hub.offline.mode = false
+blackduck.hub.password = *********
+blackduck.hub.timeout = 120
+blackduck.hub.trust.cert = true [copied]
+blackduck.hub.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com [copied]
+blackduck.hub.username = sysadmin [copied]
+blackduck.offline.mode = false
+blackduck.password = *********
+blackduck.timeout = 120
+blackduck.trust.cert = true
+blackduck.url = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+blackduck.username = sysadmin
+detect.api.timeout = 300000
+detect.bdio.output.path = /Users/gsnyder/blackduck/bdio [calculated]
+detect.blackduck.signature.scanner.disabled = false
+detect.blackduck.signature.scanner.dry.run = false
+detect.blackduck.signature.scanner.exclusion.name.patterns = node_modules
+detect.blackduck.signature.scanner.memory = 4096
+detect.blackduck.signature.scanner.parallel.processors = 1
+detect.blackduck.signature.scanner.snippet.mode = false
+detect.bom.tool.search.continue = false
+detect.bom.tool.search.depth = 0
+detect.bom.tool.search.exclusion = bin,build,.git,.gradle,node_modules,out,packages,target [calculated]
+detect.bom.tool.search.exclusion.defaults = true
+detect.cleanup = true
+detect.default.project.version.scheme = text
+detect.default.project.version.text = Default Detect Version
+detect.default.project.version.timeformat = yyyy-MM-dd\'T\'HH:mm:ss.SSS
+detect.disable.without.blackduck = false
+detect.disable.without.hub = false
+detect.docker.inspector.air.gap.path = /private/tmp/packaged-inspectors/docker [calculated]
+detect.docker.inspector.version = latest
+detect.docker.path.required = true
+detect.force.success = false
+detect.go.run.dep.init = false
+detect.gradle.inspector.air.gap.path = /private/tmp/packaged-inspectors/gradle [calculated]
+detect.gradle.inspector.version = latest
+detect.hub.signature.scanner.disabled = false
+detect.hub.signature.scanner.dry.run = false
+detect.hub.signature.scanner.exclusion.name.patterns = node_modules
+detect.hub.signature.scanner.memory = 4096
+detect.hub.signature.scanner.parallel.processors = 1
+detect.hub.signature.scanner.snippet.mode = false
+detect.notices.report = false
+detect.notices.report.path = .
+detect.npm.include.dev.dependencies = true
+detect.nuget.ignore.failure = false
+detect.nuget.inspector.air.gap.path = /private/tmp/packaged-inspectors/nuget [calculated]
+detect.nuget.inspector.name = IntegrationNugetInspector
+detect.nuget.inspector.version = latest
+detect.nuget.packages.repo.url = https://www.nuget.org/api/v2/
+detect.output.path = /Users/gsnyder/blackduck [calculated]
+detect.packagist.include.dev.dependencies = true
+detect.pear.only.required.deps = false
+detect.policy.check.fail.on.severities = BLOCKER,CRITICAL,MAJOR,MINOR,TRIVIAL [ALL]
+detect.project.clone.categories = COMPONENT_DATA,VULN_DATA
+detect.project.codelocation.unmap = false
+detect.project.level.adjustments = true
+detect.project.version.distribution = External
+detect.project.version.phase = Development
+detect.project.version.update = false
+detect.python.python3 = false
+detect.resolve.tilde.in.paths = true
+detect.risk.report.pdf = false
+detect.risk.report.pdf.path = .
+detect.sbt.report.search.depth = 3
+detect.scan.output.path = /Users/gsnyder/blackduck/scan [calculated]
+detect.search.depth = 3
+detect.source.path = /Users/gsnyder/Projects/struts/apps/showcase [calculated]
+detect.suppress.configuration.output = false
+detect.suppress.results.output = false
+detect.test.connection = false
+detect.yarn.prod.only = false
+logging.level.com.blackducksoftware.integration = INFO
+------------------------------------------------------------
+
+2018-10-02 23:42:29 INFO  [main] --- Successfully connected to Hub (version 5.0.0)!
+2018-10-02 23:42:29 INFO  [main] --- Starting search for bom tools.
+2018-10-02 23:42:29 INFO  [main] --- Searching directory: /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- Search results
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:29 INFO  [main] --- 	APPLIES: MAVEN - Pom file
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:29 INFO  [main] --- Detailed search results for directory
+2018-10-02 23:42:29 INFO  [main] --- /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:29 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:29 INFO  [main] ---       APPLIED: MAVEN - Pom file: Search: Passed. Applicable: Passed.
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: CLANG - Clang: No file was found with pattern: compile_commands.json
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: COCOAPODS - Podlock: No file was found with pattern: Podfile.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: CONDA - Conda Cli: No file was found with pattern: environment.yml
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: CPAN - Cpan Cli: No file was found with pattern: Makefile.PL
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: CRAN - Packrat Lock: No file was found with pattern: packrat.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: DOCKER - Docker: The properties are insufficient to run.
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Cli: No file was found with pattern: *.go
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: GO_DEP - Go Lock: No file was found with pattern: Gopkg.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: GO_VNDR - Vendor Config: No file was found with pattern: vendor.conf
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: GRADLE - Gradle Inspector: No file was found with pattern: build.gradle
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: HEX - Rebar Config: No file was found with pattern: rebar.config
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: MAVEN - Pom wrapper file: No file was found with pattern: pom.groovy
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: NPM - Npm Cli: No file was found with pattern: package.json
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: NPM - Package Lock: No file was found with pattern: package-lock.json
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: NPM - Shrinkwrap: No file was found with pattern: npm-shrinkwrap.json
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: NUGET - Project: No files were found with any of the patterns: *.csproj,*.fsproj,*.vbproj,*.asaproj,*.dcproj,*.shproj,*.ccproj,*.sfproj,*.njsproj,*.vcxproj,*.vcproj,*.xproj,*.pyproj,*.hiveproj,*.pigproj,*.jsproj,*.usqlproj,*.deployproj,*.msbuildproj,*.sqlproj,*.dbproj,*.rproj
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: NUGET - Solution: No files were found with any of the patterns: *.sln
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: PACKAGIST - Composer Lock: No file was found with pattern: composer.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: PEAR - Pear Cli: No file was found with pattern: package.xml
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: PIP - Pip Inspector: No file was found with pattern: setup.py
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: PIP - Pipenv Graph: No files were found with any of the patterns: Pipfile,Pipfile.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: RUBYGEMS - Gemlock: No file was found with pattern: Gemfile.lock
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: SBT - Build SBT: No file was found with pattern: build.sbt
+2018-10-02 23:42:29 INFO  [main] --- DID NOT APPLY: YARN - Yarn Lock: No file was found with pattern: yarn.lock
+2018-10-02 23:42:29 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- Preparation for extraction
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:29 INFO  [main] --- 	 READY: MAVEN - Pom file
+2018-10-02 23:42:29 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- 
+2018-10-02 23:42:29 INFO  [main] --- Extracting 1 of 1 (0%)
+2018-10-02 23:42:29 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:29 INFO  [main] --- Starting extraction: MAVEN - Pom file
+2018-10-02 23:42:29 INFO  [main] --- Identifier: MAVEN-0
+2018-10-02 23:42:29 INFO  [main] --- mavenExe : /usr/local/bin/mvn
+2018-10-02 23:42:29 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:29 INFO  [main] --- Running executable >/usr/local/bin/mvn dependency:tree
+2018-10-02 23:42:30 INFO  [main-Executable_Stream_Thread] --- [INFO] Scanning for projects...
+2018-10-02 23:42:30 INFO  [main-Executable_Stream_Thread] --- [INFO] 
+2018-10-02 23:42:30 INFO  [main-Executable_Stream_Thread] --- [INFO] -----------------< org.apache.struts:struts2-showcase >-----------------
+2018-10-02 23:42:30 INFO  [main-Executable_Stream_Thread] --- [INFO] Building Struts 2 Showcase Webapp 2.6-SNAPSHOT
+2018-10-02 23:42:30 INFO  [main-Executable_Stream_Thread] --- [INFO] --------------------------------[ war ]---------------------------------
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 2.0 kB/s)
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/struts2-config-browser-plugin-2.6-20180927.055945-75.pom
+2018-10-02 23:42:31 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/struts2-config-browser-plugin-2.6-20180927.055945-75.pom (1.5 kB at 5.7 kB/s)
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-plugins/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 817 B
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] ---                    
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-plugins/2.6-SNAPSHOT/maven-metadata.xml (817 B at 3.0 kB/s)
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-plugins/2.6-SNAPSHOT/struts2-plugins-2.6-20180927.055933-75.pom
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 2.9 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-plugins/2.6-SNAPSHOT/struts2-plugins-2.6-20180927.055933-75.pom (2.9 kB at 12 kB/s)
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-parent/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 816 B
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] ---                    
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-parent/2.6-SNAPSHOT/maven-metadata.xml (816 B at 3.0 kB/s)
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-parent/2.6-SNAPSHOT/struts2-parent-2.6-20180927.055622-82.pom
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.1/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 7.7/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 8.2/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 12/43 kB 
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 16/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 16/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 20/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 24/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 25/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 29/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 32/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 33/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 37/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 40/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 41/43 kB
+2018-10-02 23:42:32 INFO  [main-Executable_Stream_Thread] --- Progress (1): 43 kB   
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] ---                    
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-parent/2.6-SNAPSHOT/struts2-parent-2.6-20180927.055622-82.pom (43 kB at 162 kB/s)
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 4.6 kB/s)
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/struts2-core-2.6-20180927.055918-75.pom
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.1/17 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 7.7/17 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 8.2/17 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 12/17 kB 
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 16/17 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 16/17 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 17 kB   
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] ---                    
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/struts2-core-2.6-20180927.055918-75.pom (17 kB at 61 kB/s)
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 5.1 kB/s)
+2018-10-02 23:42:33 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/struts2-sitemesh-plugin-2.6-20180927.060001-75.pom
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Progress (1): 2.1 kB
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/struts2-sitemesh-plugin-2.6-20180927.060001-75.pom (2.1 kB at 8.1 kB/s)
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 5.0 kB/s)
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/struts2-tiles-plugin-2.6-20180927.060019-75.pom
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Progress (1): 3.3 kB
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/struts2-tiles-plugin-2.6-20180927.060019-75.pom (3.3 kB at 14 kB/s)
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:34 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 5.1 kB/s)
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/struts2-dwr-plugin-2.6-20180927.060034-75.pom
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.7 kB
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/struts2-dwr-plugin-2.6-20180927.060034-75.pom (1.7 kB at 7.0 kB/s)
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 4.8 kB/s)
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/struts2-json-plugin-2.6-20180927.060204-75.pom
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.1/4.2 kB
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.2 kB    
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/struts2-json-plugin-2.6-20180927.060204-75.pom (4.2 kB at 16 kB/s)
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:35 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 4.7 kB/s)
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/struts2-convention-plugin-2.6-20180927.060115-75.pom
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Progress (1): 2.9 kB
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/struts2-convention-plugin-2.6-20180927.060115-75.pom (2.9 kB at 11 kB/s)
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 4.8 kB/s)
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/struts2-spring-plugin-2.6-20180927.060051-75.pom
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Progress (1): 3.1 kB
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/struts2-spring-plugin-2.6-20180927.060051-75.pom (3.1 kB at 13 kB/s)
+2018-10-02 23:42:36 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 5.1 kB/s)
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/struts2-bean-validation-plugin-2.6-20180927.060224-75.pom
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Progress (1): 2.3 kB
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/struts2-bean-validation-plugin-2.6-20180927.060224-75.pom (2.3 kB at 9.4 kB/s)
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/maven-metadata.xml
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2 kB
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/maven-metadata.xml (1.2 kB at 5.1 kB/s)
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/struts2-async-plugin-2.6-20180927.060240-34.pom
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Progress (1): 2.3 kB
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:37 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/struts2-async-plugin-2.6-20180927.060240-34.pom (2.3 kB at 10 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/struts2-config-browser-plugin-2.6-20180927.055945-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/struts2-json-plugin-2.6-20180927.060204-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/struts2-dwr-plugin-2.6-20180927.060034-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/struts2-tiles-plugin-2.6-20180927.060019-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/struts2-sitemesh-plugin-2.6-20180927.060001-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.1/11 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 7.7/11 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 7.7/11 kB | 4.1/46 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 8.2/11 kB | 4.1/46 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 8.2/11 kB | 7.7/46 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 11 kB | 7.7/46 kB    
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 11 kB | 8.2/46 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 11 kB | 8.2/46 kB | 4.1/42 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 11 kB | 8.2/46 kB | 7.7/42 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 11 kB | 8.2/46 kB | 8.2/42 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 11 kB | 8.2/46 kB | 8.2/42 kB | 4.1/81 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 11 kB | 8.2/46 kB | 8.2/42 kB | 7.7/81 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 8.2/46 kB | 8.2/42 kB | 7.7/81 kB | 4.1/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 8.2/46 kB | 8.2/42 kB | 8.2/81 kB | 4.1/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 8.2/46 kB | 8.2/42 kB | 8.2/81 kB | 7.7/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 8.2/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 12/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 16/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 16/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 20/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 24/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 25/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 29/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 32/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 33/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 37/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 40/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 8.2/42 kB | 8.2/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 12/42 kB | 8.2/81 kB | 8.2/37 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 12/42 kB | 12/81 kB | 8.2/37 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 16/42 kB | 12/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 16/42 kB | 16/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 16/42 kB | 16/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 16/42 kB | 16/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 20/42 kB | 16/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 20/42 kB | 20/81 kB | 8.2/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 20/42 kB | 20/81 kB | 12/37 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 24/42 kB | 20/81 kB | 12/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 24/42 kB | 20/81 kB | 16/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 24/42 kB | 24/81 kB | 16/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 24/42 kB | 24/81 kB | 16/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 25/42 kB | 24/81 kB | 16/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 25/42 kB | 24/81 kB | 20/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 25/42 kB | 25/81 kB | 20/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 25/42 kB | 25/81 kB | 24/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 29/42 kB | 25/81 kB | 24/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 29/42 kB | 25/81 kB | 25/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 29/42 kB | 29/81 kB | 25/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 41/46 kB | 29/42 kB | 29/81 kB | 29/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 45/46 kB | 29/42 kB | 29/81 kB | 29/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 45/46 kB | 32/42 kB | 29/81 kB | 29/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 32/42 kB | 29/81 kB | 29/37 kB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 32/42 kB | 29/81 kB | 32/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 32/42 kB | 32/81 kB | 32/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 32/42 kB | 32/81 kB | 33/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 33/42 kB | 32/81 kB | 33/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 33/42 kB | 32/81 kB | 37/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 33/42 kB | 33/81 kB | 37/37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 33/42 kB | 33/81 kB | 37 kB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 37/42 kB | 33/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 37/42 kB | 37/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 40/42 kB | 37/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 40/42 kB | 40/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 41/42 kB | 40/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 41/42 kB | 41/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 41/81 kB | 37 kB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 45/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 48/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 49/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 53/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 56/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 57/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 61/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 64/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 66/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 70/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 72/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 74/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 78/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 80/81 kB | 37 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 11 kB | 46 kB | 42 kB | 81 kB | 37 kB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] ---                                                    
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-dwr-plugin/2.6-SNAPSHOT/struts2-dwr-plugin-2.6-20180927.060034-75.jar (11 kB at 42 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/struts2-convention-plugin-2.6-20180927.060115-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-sitemesh-plugin/2.6-SNAPSHOT/struts2-sitemesh-plugin-2.6-20180927.060001-75.jar (37 kB at 126 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-config-browser-plugin/2.6-SNAPSHOT/struts2-config-browser-plugin-2.6-20180927.055945-75.jar (46 kB at 155 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-tiles-plugin/2.6-SNAPSHOT/struts2-tiles-plugin-2.6-20180927.060019-75.jar (42 kB at 141 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/struts2-spring-plugin-2.6-20180927.060051-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/struts2-async-plugin-2.6-20180927.060240-34.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/struts2-bean-validation-plugin-2.6-20180927.060224-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-json-plugin/2.6-SNAPSHOT/struts2-json-plugin-2.6-20180927.060204-75.jar (81 kB at 271 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloading from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/struts2-core-2.6-20180927.055918-75.jar
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 4.1/91 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 7.7/91 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 8.2/91 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 8.2/91 kB | 4.1/24 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 12/91 kB | 4.1/24 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 12/91 kB | 7.7/24 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 16/91 kB | 7.7/24 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 16/91 kB | 7.7/24 kB | 4.1/26 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 16/91 kB | 8.2/24 kB | 4.1/26 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 16/91 kB | 8.2/24 kB | 4.1/26 kB | 4.1/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 16/91 kB | 8.2/24 kB | 7.7/26 kB | 4.1/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 16/91 kB | 8.2/24 kB | 7.7/26 kB | 4.1/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 16/91 kB | 8.2/24 kB | 8.2/26 kB | 4.1/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 16/91 kB | 8.2/24 kB | 8.2/26 kB | 7.7/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 20/91 kB | 8.2/24 kB | 8.2/26 kB | 7.7/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 20/91 kB | 8.2/24 kB | 8.2/26 kB | 8.2/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 24/91 kB | 8.2/24 kB | 8.2/26 kB | 8.2/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 24/91 kB | 8.2/24 kB | 8.2/26 kB | 12/14 kB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 25/91 kB | 8.2/24 kB | 8.2/26 kB | 12/14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 25/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 29/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 32/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 33/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 37/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 40/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 41/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 41/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 41/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 41/91 kB | 8.2/24 kB | 8.2/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 41/91 kB | 8.2/24 kB | 12/26 kB | 14 kB | 0/1.6 MB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 45/91 kB | 8.2/24 kB | 12/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 45/91 kB | 12/24 kB | 12/26 kB | 14 kB | 0/1.6 MB 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 48/91 kB | 12/24 kB | 12/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 48/91 kB | 12/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 49/91 kB | 12/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 49/91 kB | 16/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 49/91 kB | 16/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 49/91 kB | 16/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 53/91 kB | 16/24 kB | 16/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 53/91 kB | 16/24 kB | 20/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 56/91 kB | 16/24 kB | 20/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 56/91 kB | 20/24 kB | 20/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 57/91 kB | 20/24 kB | 20/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 57/91 kB | 20/24 kB | 24/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 61/91 kB | 20/24 kB | 24/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 61/91 kB | 24/24 kB | 24/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 64/91 kB | 24/24 kB | 24/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 64/91 kB | 24/24 kB | 24/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 64/91 kB | 24/24 kB | 25/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 64/91 kB | 24/24 kB | 25/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 66/91 kB | 24/24 kB | 25/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 66/91 kB | 24 kB | 25/26 kB | 14 kB | 0/1.6 MB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 70/91 kB | 24 kB | 25/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 70/91 kB | 24 kB | 25/26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 70/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 72/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 72/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 74/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 74/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 78/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 78/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 80/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 80/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 82/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 82/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 86/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 86/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 88/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 88/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 90/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 90/91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB   
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (5): 91 kB | 24 kB | 26 kB | 14 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] ---                                                         
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-async-plugin/2.6-SNAPSHOT/struts2-async-plugin-2.6-20180927.060240-34.jar (14 kB at 26 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (4): 91 kB | 24 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] ---                                                 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-spring-plugin/2.6-SNAPSHOT/struts2-spring-plugin-2.6-20180927.060051-75.jar (24 kB at 44 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (3): 91 kB | 26 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] ---                                         
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-bean-validation-plugin/2.6-SNAPSHOT/struts2-bean-validation-plugin-2.6-20180927.060224-75.jar (26 kB at 45 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 91 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 91 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (2): 91 kB | 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] ---                                 
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-convention-plugin/2.6-SNAPSHOT/struts2-convention-plugin-2.6-20180927.060115-75.jar (91 kB at 157 kB/s)
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.7/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.8/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 0.9/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.0/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.1/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.2/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.3/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.4/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.5/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6/1.6 MB
+2018-10-02 23:42:38 INFO  [main-Executable_Stream_Thread] --- Progress (1): 1.6 MB    
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] ---                     
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- Downloaded from apache.snapshots: https://repository.apache.org/snapshots/org/apache/struts/struts2-core/2.6-SNAPSHOT/struts2-core-2.6-20180927.055918-75.jar (1.6 MB at 1.5 MB/s)
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] 
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ struts2-showcase ---
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] org.apache.struts:struts2-showcase:war:2.6-SNAPSHOT
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-config-browser-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-sitemesh-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-tiles-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-api:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-core:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.slf4j:jcl-over-slf4j:jar:1.7.6:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-servlet:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-request-api:jar:1.0.7:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-request-jsp:jar:1.0.7:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-request-servlet:jar:1.0.7:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-freemarker:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.apache.tiles:tiles-request-freemarker:jar:1.0.7:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-ognl:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.tiles:tiles-el:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-dwr-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-json-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.commons:commons-lang3:jar:3.6:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.commons:commons-text:jar:1.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.tiles:tiles-jsp:jar:3.0.8:runtime
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.tiles:tiles-template:jar:3.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.apache.tiles:tiles-autotag-core-runtime:jar:1.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.slf4j:slf4j-api:jar:1.7.12:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-convention-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.ow2.asm:asm:jar:5.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.ow2.asm:asm-commons:jar:5.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- org.ow2.asm:asm-tree:jar:5.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-spring-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-beans:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-core:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.springframework:spring-context:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  +- org.springframework:spring-aop:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.springframework:spring-expression:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.springframework:spring-web:jar:4.3.13.RELEASE:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-bean-validation-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-beanutils:commons-beanutils:jar:1.9.3:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-async-plugin:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- javax.servlet:servlet-api:jar:2.5:provided
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.logging.log4j:log4j-api:jar:2.10.0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.logging.log4j:log4j-core:jar:2.10.0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.logging.log4j:log4j-jcl:jar:2.10.0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-logging:commons-logging:jar:1.1.3:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.velocity:velocity:jar:1.7:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-collections:commons-collections:jar:3.2.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-lang:commons-lang:jar:2.4:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.velocity:velocity-tools:jar:2.0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-digester:commons-digester:jar:2.1:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-chain:commons-chain:jar:1.1:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- commons-validator:commons-validator:jar:1.5.1:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- dom4j:dom4j:jar:1.1:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- oro:oro:jar:2.0.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- sslext:sslext:jar:1.2-0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.struts:struts-core:jar:1.3.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- antlr:antlr:jar:2.7.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.apache.struts:struts-taglib:jar:1.3.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- org.apache.struts:struts-tiles:jar:1.3.8:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- opensymphony:sitemesh:jar:2.4.2:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- uk.ltd.getahead:dwr:jar:1.1.1:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- commons-fileupload:commons-fileupload:jar:1.3.3:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-io:commons-io:jar:2.5:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- net.sourceforge.jwebunit:jwebunit-core:jar:1.4.1:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- junit:junit:jar:4.12:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- regexp:regexp:jar:1.3:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- commons-httpclient:commons-httpclient:jar:3.1:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- commons-codec:commons-codec:jar:1.2:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:jar:1.4.1:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- htmlunit:htmlunit:jar:1.11:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- jaxen:jaxen:jar:1.1:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     |  +- jdom:jdom:jar:1.0:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     |  \- xml-apis:xml-apis:jar:1.3.02:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- rhino:js:jar:1.6R5:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- xerces:xercesImpl:jar:2.10.0:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     +- xerces:xmlParserAPIs:jar:2.6.2:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- nekohtml:nekohtml:jar:0.9.5:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.hibernate:hibernate-validator:jar:5.1.3.Final:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.jboss.logging:jboss-logging:jar:3.1.3.GA:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- com.fasterxml:classmate:jar:1.0.0:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] +- org.apache.struts:struts2-core:jar:2.6-SNAPSHOT:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  +- org.freemarker:freemarker:jar:2.3.28:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |  \- ognl:ognl:jar:3.2.5:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] |     \- org.javassist:javassist:jar:3.20.0-GA:compile
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] \- org.springframework:spring-test:jar:4.3.13.RELEASE:test
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] BUILD SUCCESS
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] Total time: 9.319 s
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] Finished at: 2018-10-02T23:42:39-04:00
+2018-10-02 23:42:39 INFO  [main-Executable_Stream_Thread] --- [INFO] ------------------------------------------------------------------------
+2018-10-02 23:42:39 INFO  [main] --- Executable finished: 0
+2018-10-02 23:42:39 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:39 INFO  [main] --- Finished extraction: SUCCESS
+2018-10-02 23:42:39 INFO  [main] --- Code locations found: 1
+2018-10-02 23:42:39 INFO  [main] --- ------------------------------------------------------------------------------------------------------
+2018-10-02 23:42:39 INFO  [main] --- Exactly one unique bom tool was found. Using MAVEN found at depth 0 as project info.
+2018-10-02 23:42:39 INFO  [main] --- BDIO Generated: /Users/gsnyder/blackduck/bdio/showcase_struts2_showcase_org_apache_struts_struts2_showcase_2_6_SNAPSHOT_maven_bom.jsonld
+2018-10-02 23:42:39 INFO  [main] --- 
+2018-10-02 23:42:39 INFO  [main] --- 
+2018-10-02 23:42:39 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:39 INFO  [main] --- Extraction results:
+2018-10-02 23:42:39 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:39 INFO  [main] --- /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:39 INFO  [main] --- 	Code locations: 1
+2018-10-02 23:42:39 INFO  [main] --- 		showcase/struts2-showcase/org.apache.struts/struts2-showcase/2.6-SNAPSHOT maven/bom
+2018-10-02 23:42:39 INFO  [main] --- 	Success: MAVEN - Pom file
+2018-10-02 23:42:39 INFO  [main] --- ======================================================================================================
+2018-10-02 23:42:39 INFO  [main] --- 
+2018-10-02 23:42:39 INFO  [main] --- 
+2018-10-02 23:42:39 INFO  [main] --- Project Name: struts2-showcase
+2018-10-02 23:42:39 INFO  [main] --- Project Version Name: 2.6-SNAPSHOT
+2018-10-02 23:42:40 INFO  [main] --- uploading showcase_struts2_showcase_org_apache_struts_struts2_showcase_2_6_SNAPSHOT_maven_bom.jsonld to https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com
+2018-10-02 23:42:40 INFO  [main] --- No scan targets provided - registering the source path /Users/gsnyder/Projects/struts/apps/showcase to scan
+2018-10-02 23:42:41 INFO  [main] --- The version file has not been created yet so creating it now.
+2018-10-02 23:42:41 INFO  [main] --- Downloading the Black Duck Signature Scanner.
+2018-10-02 23:42:54 INFO  [main] --- Black Duck Signature Scanner downloaded successfully.
+2018-10-02 23:42:54 INFO  [main] --- The Black Duck Signature Scanner downloaded/found successfully: /Users/gsnyder/blackduck/tools
+2018-10-02 23:42:54 INFO  [main] --- Starting the Black Duck Signature Scan commands.
+2018-10-02 23:42:54 INFO  [pool-2-thread-1] --- Hub CLI command: /Users/gsnyder/blackduck/tools/Black_Duck_Scan_Installation/scan.cli-5.0.0/jre/Contents/Home/bin/java -Done-jar.silent=true -Done-jar.jar.path=/Users/gsnyder/blackduck/tools/Black_Duck_Scan_Installation/scan.cli-5.0.0/lib/cache/scan.cli.impl-standalone.jar -Xmx4096m -jar /Users/gsnyder/blackduck/tools/Black_Duck_Scan_Installation/scan.cli-5.0.0/lib/scan.cli-5.0.0-standalone.jar --no-prompt --scheme https --host ec2-18-217-189-8.us-east-2.compute.amazonaws.com --username sysadmin --port 443 --insecure -v --logDir /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1 --statusWriteDir /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1 --project struts2-showcase --release 2.6-SNAPSHOT --name showcase/struts2-showcase/2.6-SNAPSHOT scan /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:42:55 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Start wrapper: ScanCliWrapperSettings [commandLine=org.apache.commons.cli.CommandLine@255316f2, fileUriSet=null, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443]...
+2018-10-02 23:42:56 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Start scan loop: ScanClientSettings [commandLine=org.apache.commons.cli.CommandLine@4d49af10, fileUriSet=[file://gsnyder-mac/Users/gsnyder/Projects/struts/apps/showcase], dryRunWriteDir=No dry run file., dryRunReadFile=No dry run file., snippetMatching=false, snippetMatchingOnly=false, fullSnippetScan=false, logDir=/Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443, name=Optional[showcase/struts2-showcase/2.6-SNAPSHOT scan], project=Optional[struts2-showcase], release=Optional[2.6-SNAPSHOT], username=sysadmin, password=<NOT SHOWN>]...
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Initialize client for ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scans
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/scan-summaries
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = {scanId}, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scanstatus
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/v1/scans/signatureVersion
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/bom-import
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/internal/scans/{scanId}/unmatched-files?limit={limit}&offset={offset}
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/fp-import/scans/{scanId}
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: RestResourceClient created. SingleRelativePath = null, URI = https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com:443/api/projects?q=name:{projname}&limit={limit}&offset={offset}
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Execute scan file://gsnyder-mac/Users/gsnyder/Projects/struts/apps/showcase....
+2018-10-02 23:42:57 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Scan engine initialized with niceness set to false
+2018-10-02 23:43:07 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Total time: 9 seconds to scan path: /Users/gsnyder/Projects/struts/apps/showcase
+2018-10-02 23:43:07 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Post Scan...
+2018-10-02 23:43:20 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: ScanExecResult: ScanExecResult [scanClientSettings=ScanClientSettings [commandLine=org.apache.commons.cli.CommandLine@4d49af10, fileUriSet=[file://gsnyder-mac/Users/gsnyder/Projects/struts/apps/showcase], dryRunWriteDir=No dry run file., dryRunReadFile=No dry run file., snippetMatching=false, snippetMatchingOnly=false, fullSnippetScan=false, logDir=/Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1, scheme=https, host=ec2-18-217-189-8.us-east-2.compute.amazonaws.com, port=443, name=Optional[showcase/struts2-showcase/2.6-SNAPSHOT scan], project=Optional[struts2-showcase], release=Optional[2.6-SNAPSHOT], username=sysadmin, password=<NOT SHOWN>], result=0, dataFileName=null, scanContainer=ScanContainerView{scanId=316496a7-8aa2-4a99-a37c-b47b97552bb3, createdOn=2018-10-03T03:42:57.021Z, timeToScan=9312, scannerVersion=5.0.0, signatureVersion=7.0.0, hostName=gsnyder-mac, ownerEntityKeyToken=SN#gsnyder-mac-showcase, baseDir=/Users/gsnyder/Projects/struts/apps/showcase, name=Optional[showcase/struts2-showcase/2.6-SNAPSHOT scan], project=Optional[struts2-showcase], release=Optional[2.6-SNAPSHOT], scanProblem=null, scanProblemList.size()=0, scanNodeList.size()=28919}, scanResult=ScanView{id=316496a7-8aa2-4a99-a37c-b47b97552bb3, scannerVersion=5.0.0, signatureVersion=7.0.0, name=showcase/struts2-showcase/2.6-SNAPSHOT scan, hostName=gsnyder-mac, ownerEntityKeyToken=SN#316496a7-8aa2-4a99-a37c-b47b97552bb3, baseDir=/, createdOn=2018-10-03T03:42:57.021Z, lastModifiedOn=2018-10-03T03:43:20.467Z, timeToScan=0, createdByUserId=00000000-0000-0000-0001-000000000001, matchCount=0, numDirs=0, numNonDirFiles=0, status=SAVING_SCAN_DATA, deepSystemSize=Optional.empty, scanSourceType=SN, scanSourceId=316496a7-8aa2-4a99-a37c-b47b97552bb3, timeLastModified=1538538200467, timeToPersistMs=0, scanTime=1538538177021}, scanSummary=com.blackducksoftware.scan.api.ScanSummaryView@da06d635, scanDate=Tue Oct 02 23:42:57 EDT 2018, scanEndDate=Tue Oct 02 23:43:20 EDT 2018, scanCreated=true]
+2018-10-02 23:43:20 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1/log/gsnyder-mac-showcase-2018-10-03T034257.021Z.log
+2018-10-02 23:43:20 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Logging to file:
+2018-10-02 23:43:20 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Creating data output file: /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1/status/gsnyder-mac-showcase-2018-10-03T034257.021Z.json
+2018-10-02 23:43:20 INFO  [pool-2-thread-1-Stream Redirect Thread] --- INFO: Persist ScanSummary to file...
+2018-10-02 23:43:20 INFO  [pool-2-thread-1] --- INFO: Persisted status: /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1/status/gsnyder-mac-showcase-2018-10-03T034257.021Z.json
+2018-10-02 23:43:20 INFO  [pool-2-thread-1] --- Logging to file: /Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1/log/gsnyder-mac-showcase-2018-10-03T034257.021Z.log
+
+2018-10-02 23:43:20 INFO  [pool-2-thread-1] --- Black Duck Signature Scanner return code: 0
+2018-10-02 23:43:20 INFO  [pool-2-thread-1] --- You can view the logs at: '/Users/gsnyder/blackduck/scan/BlackDuckScanOutput/2018-10-03_03-42-54-748_1'
+2018-10-02 23:43:20 INFO  [main] --- Completed the Black Duck Signature Scan commands.
+2018-10-02 23:43:20 INFO  [main] --- /Users/gsnyder/Projects/struts/apps/showcase was successfully scanned by the BlackDuck CLI.
+2018-10-02 23:43:21 INFO  [main] --- Waiting for the BOM to be updated
+2018-10-02 23:43:21 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:26 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:31 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:36 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:41 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:46 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:51 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:43:56 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:01 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:06 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:11 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:16 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:21 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:26 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:31 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:36 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:42 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:47 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:52 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:44:57 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:45:02 INFO  [main] --- Still waiting for the pending scans to complete.
+2018-10-02 23:45:07 INFO  [main] --- The BOM has been updated
+2018-10-02 23:45:07 INFO  [main] --- Policy Status: NOT_IN_VIOLATION
+2018-10-02 23:45:07 INFO  [main] --- The Hub found: 0 components in violation, 0 components in violation, but overridden, and 76 components not in violation.
+2018-10-02 23:45:07 INFO  [main] --- To see your results, follow the URL: https://ec2-18-217-189-8.us-east-2.compute.amazonaws.com/api/projects/f202f2d6-69f1-43e5-b1f6-569914b8fe4e/versions/d60a71c2-49e4-47c2-ab92-de8b9e12c0c4/components
+2018-10-02 23:45:07 INFO  [main] --- 
+2018-10-02 23:45:07 INFO  [main] --- 
+2018-10-02 23:45:07 INFO  [main] --- ======== Detect Results ========
+2018-10-02 23:45:07 INFO  [main] --- MAVEN: SUCCESS
+2018-10-02 23:45:07 INFO  [main] --- 
+2018-10-02 23:45:07 INFO  [main] --- Scan Target /Users/gsnyder/Projects/struts/apps/showcase: SUCCESS
+2018-10-02 23:45:07 INFO  [main] --- Overall Status: SUCCESS
+2018-10-02 23:45:07 INFO  [main] --- ================================
+2018-10-02 23:45:07 INFO  [main] --- 
+2018-10-02 23:45:07 INFO  [main] --- Hub-Detect run duration: 00h 02m 39s 541ms
+2018-10-02 23:45:07 INFO  [Thread-2] --- Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@6aceb1a5: startup date [Tue Oct 02 23:42:26 EDT 2018]; root of context hierarchy
+2018-10-02 23:45:07 INFO  [Thread-2] --- Unregistering JMX-exposed beans on shutdown
+Result code of 0, exiting

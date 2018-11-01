@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# replicate the showcase app
-BASE_TEST_PROJECT=$1
-
+# replicate the showcase app which is from Apache Struts and 
+# Tutorial_files which are the example files used in the Protex tutorial for snippet matching
 cd test_projects
 
-for i in {1..50}
+for base_project in showcase Tutorial_Files
 do
-	cp -R $BASE_TEST_PROJECT ${BASE_TEST_PROJECT}$i
+	for i in {1..50}
+	do
+		cp -R ${base_project} ${base_project}$i
+	done
 done
