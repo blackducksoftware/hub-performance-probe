@@ -8,6 +8,9 @@ The Hub performance probe can either be run directly using python 3.4+ OR can be
 
 ## To build
 
+[![Build Status](https://travis-ci.org/blackducksoftware/hub-performance-probe.svg?branch=master)](https://travis-ci.org/blackducksoftware/hub-performance-probe)
+[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/blackducksoftware/hub-performance-probe/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/blackducksoftware/hub-performance-probe/branches/master)
+
 ```
 docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
 ```
@@ -61,20 +64,20 @@ docker run gsnyderbds/hub_performance_probe -h
     mkdir /tmp/probe_results
     ```
 
-1. Run the container, mounting /var/log to your host's /var/log
+1. Run the container, mounting /tmp/probe_results to your host's /var/log
 
     ```
-    docker run -d -v /var/probe_results:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns
+    docker run -d -v /tmp/probe_results:/var/log gsnyderbds/hub_performance_probe https://my-hub-dns
     cd /tmp/probe_results
     tail -f hub_probe.log
     ```
-
+     
     where you should substitute the following,
 
     * my-hub-dns should be the DNS (or IP address) for your Hub server
     * gsnyderbds/hub_performance_probe should be substituted with your own repo/tag if you decide to build and use your own
 
-3. Check /var/log/hub_probe.log for progress and, by default, results are written into /var/log/hub-performance-results.csv
+3. Check /tmp/probe_results/hub_probe.log for progress and, by default, results are written into .../hub-performance-results.csv
 
 ## Release History
 * Docker Hub tag: 1.0, Date: Nov 1, 2018
