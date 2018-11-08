@@ -237,6 +237,7 @@ if __name__ == "__main__":
 	parser.add_argument("url")
 	parser.add_argument("--username", default="sysadmin")
 	parser.add_argument("--password", default="blackduck")
+	parser.add_argument("--benchmarks", default="component_matching,snippet_matching", help="A comma-separate list of benchmarks - no spaces")
 	parser.add_argument("--token", default="undefined", help="Use authentication token, this will ignore username and password options")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
 	parser.add_argument("--detect_version", default="latest")
@@ -263,6 +264,7 @@ if __name__ == "__main__":
 		blackduck_username=args.username, 
 		blackduck_password=args.password, 
 		blackduck_api_token=args.token,
+		benchmarks=args.benchmarks.split(","),
 		csv_output_file=args.csvfile, 
 		iterations=args.iterations,
 		max_threads=args.maxthreads,

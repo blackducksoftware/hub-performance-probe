@@ -264,9 +264,39 @@ class TestHubDetectWrapper(unittest.TestCase):
 
 
 
+	def test_adjust_detect_options_for_backwards_compatibility(self):
+		wrapper = HubDetectWrapper(self.fake_url)
 
+		input_options = [
+			Path('/tmp/hub-detect.sh'),
+			'--blackduck.url={}'.format(self.fake_url), 
+			'--blackduck.username=a_user', 
+			'--blackduck.passwor=a_password', 
+			'--blackduck.trust.cert=true', 
+			'--blackduck.api.timeout', 
+			'--detect.api.timeout', 
+			'--detect.policy.check.fail.on.severities=ALL'
+		]
+		expected_options_old_versions = [
+			Path('/tmp/hub-detect.sh'),
+			'--blackduck.hub.url={}'.format(self.fake_url), 
+			'--blackduck.hub.username=a_user', 
+			'--blackduck.hub.passwor=a_password', 
+			'--blackduck.hub.trust.cert=true', 
+			'--blackduck.hub.api.timeout', 
+			'--detect.api.timeout', 
+			'--detect.policy.check.fail.on.severities=ALL'
+		]
+		options_and_versions = {
+			'4.4.1' : {'input': input_options, 'expected': input_options},
+			'4.2.0' : {'input': input_options, 'expected': input_options},
+			'4.1.0' : {'input': input_options, 'expected': expected_options_old_versions},
+			'3.0.1' : {'input': input_options, 'expected': expected_options_old_versions},
+		}
 
-
+		for version_str, inputs_and_expected in options_and_versions.items():
+			resulting_options = wrapper._adjust_detect_options_for_backwards_compatibility(inputs_and_expected['input'], version_str)
+			assert resulting_options == inputs_and_expected['expected']
 
 
 

@@ -217,12 +217,27 @@ class HubDetectWrapper:
 	def _get_detect_log_file_path(self, subprocess_options):
 		return self._output_dir(subprocess_options) + '/detect.log'
 
+	def _adjust_detect_options_for_backwards_compatibility(self, options_list, detect_version_str):
+		logging.debug("adjusting subprocess options for backwards compatibility, options: {}".format(options_list))
+		detect_version = int(detect_version_str.replace(".", ""))
+		if detect_version < 420:
+			adjusted_options = []
+			for o in options_list:
+				if isinstance(o, str):
+					adjusted_options.append(o.replace("--blackduck.", "--blackduck.hub."))
+				else:
+					adjusted_options.append(o)
+		else:
+			adjusted_options = options_list
+		return adjusted_options
+
 	def _run_detect(self, subprocess_options):
 		# run detect adjusting the environment to include DETECT_LATEST_RELEASE_VERSION if appropriate
 		my_env = os.environ.copy()
 		if self.detect_version != "latest":
 			logging.debug("setting DETECT_LATEST_RELEASE_VERSION to version {} of detect".format(self.detect_version))
 			my_env["DETECT_LATEST_RELEASE_VERSION"] = self.detect_version
+			subprocess_options = self._adjust_detect_options_for_backwards_compatibility(subprocess_options, self.detect_version)
 
 		result = subprocess.run(
 			subprocess_options, 
