@@ -15,6 +15,13 @@ The Hub performance probe can either be run directly using python 3.4+ OR can be
 docker build -f hub_performance_probe.dockerfile -t hub_performance_probe .
 ```
 
+### Adding support for newer, different detect versions
+
+1. Download the detect jar
+1. Add it to the git repo
+1. Update the test code, hub_detect_wrapper.py, hub_peformance_probe.py accordingly to support the new version
+1. Rebuild the docker image
+
 ## To run
 ### To run directly using python
 
@@ -80,6 +87,10 @@ docker run gsnyderbds/hub_performance_probe -h
 3. Check /tmp/probe_results/hub_probe.log for progress and, by default, results are written into .../hub-performance-results.csv
 
 ## Release History
+* Docker Hub tag: 1.1, Date: Nov 28, 2018
+    * refactoring the use of hub-detect to use the jar files directly, i.e. no download of detect jar
+    * improving the argparse options to clarify the use of different detect versions, clarify how to select different benchmarks
+
 * Docker Hub tag: 1.0, Date: Nov 1, 2018
     * supporting different combinations of detect options
     * adding support for snippet matching tests using Protex's tutorial files

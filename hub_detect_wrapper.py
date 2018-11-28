@@ -7,43 +7,53 @@ from pathlib import Path
 import re
 import subprocess
 
-# TODO: Refactor this to support choosing a Hub detect version
-# TODO: Eliminate the need to include a jar file in the repo?
+class UnsupportedDetectVersion(Exception):
+	pass
 
 class HubDetectWrapper:
+	# Extend this list anytime a new version is added
+	supported_detect_versions=[
+		"3.0.0", 
+		"3.0.1", 
+		"3.1.0", 
+		"3.1.1", 
+		"3.2.0",
+		"3.2.1", 
+		"3.2.2", 
+		"3.2.3",
+		"4.0.0",
+		"4.1.0",
+		"4.2.0",
+		"4.3.0",
+		"4.4.1"
+	]
+
 	def __init__(self, 
 			blackduck_url, 
 			blackduck_username="sysadmin",
 			blackduck_password="blackduck",
 			blackduck_token="undefined", 
 			target_path="./",
-			detect_version="latest",
+			detect_version="4.4.1",
 			additional_detect_options=[],
-			detect_log_path=None,
-			detect_path=None):
+			detect_log_path=None):
 		self.blackduck_url=blackduck_url
 		self.blackduck_username=blackduck_username
 		self.blackduck_password=blackduck_password
 		self.blackduck_token = blackduck_token
 		self.target_path = target_path
 		self.detect_version = detect_version
+		self.hub_detect_path = self._get_detect_path(detect_version)
 		self.detect_log_path = detect_log_path
 		self.additional_detect_options = additional_detect_options
-		if detect_path:
-			self.hub_detect_path = Path(detect_path)
-		else:
-			self.hub_detect_path = Path(self._get_detect_path())
 
-	def _get_detect_path(self):
-		'''Get the detect shell script, if it does not already exist, then return the path to invoke the script'''
-		logging.debug("Retrieving the Hub detect shell script")
-		detect_shell_script_path="/tmp/hub-detect.sh"
-		if not os.path.isfile(detect_shell_script_path):
-			with open("/tmp/hub-detect.sh", 'w') as f:
-				curl_result = subprocess.run(["curl", "-s", "https://blackducksoftware.github.io/hub-detect/hub-detect.sh"], stdout=f)
-				chmod_result = subprocess.run(["chmod", "+x", detect_shell_script_path])
-				logging.debug("curl and chmod returncodes: %s, %s" % (curl_result.returncode, chmod_result.returncode))
-		return detect_shell_script_path
+	def _get_detect_path(self, detect_version):
+		if detect_version in HubDetectWrapper.supported_detect_versions:
+			return "hub-detect-{}.jar".format(detect_version)
+		else:
+			raise UnsupportedDetectVersion(
+				"The version selected, {}, is not in the list of supported versions - {}".format(
+					detect_version, HubDetectWrapper.supported_detect_versions))
 
 	def _get_overall_status(self, detect_output):
 		overall_status_search = re.search(r'Overall Status: ([A-Z_]+)', detect_output)
@@ -169,6 +179,8 @@ class HubDetectWrapper:
 				redacted_options.append(['--blackduck.api.token=<redacted>'])
 			elif re.findall(r'--blackduck.password=', str(option)):
 				redacted_options.append(['--blackduck.password=<redacted>'])
+			elif re.findall(r'--blackduck.hub.password=', str(option)):
+				redacted_options.append(['--blackduck.hub.password=<redacted>'])
 			else:
 				redacted_options.append(option)
 		return redacted_options
@@ -183,22 +195,8 @@ class HubDetectWrapper:
 				output_dir=output_path_option_search.group(1)
 		return output_dir
 
-	def _get_shell_script_or_jar_file_options(self):
-		''' Parse the hub detect path to determine if it's a jar or shell script and adjust options accordingly
-		'''
-		file_extension = self.hub_detect_path.name.split(".")[-1]
-		acceptable_extensions = ["sh", "jar"]
-
-		assert file_extension in acceptable_extensions, "File extension - %s - not in acceptable list of extensions %s" % (file_extension, acceptable_extensions)
-
-		if file_extension == "jar":
-			return ["java", "-jar", self.hub_detect_path]
-		else:
-			return [self.hub_detect_path]
-
 	def _determine_subprocess_options(self):
-		options = self._get_shell_script_or_jar_file_options()
-		# options = ["detect"]
+		options = ["java", "-jar", self.hub_detect_path]
 		if self.blackduck_token == "undefined" or self.blackduck_token == "":
 			options.extend([
 				'--blackduck.url=%s' % self.blackduck_url,
@@ -232,16 +230,11 @@ class HubDetectWrapper:
 		return adjusted_options
 
 	def _run_detect(self, subprocess_options):
-		# run detect adjusting the environment to include DETECT_LATEST_RELEASE_VERSION if appropriate
-		my_env = os.environ.copy()
-		if self.detect_version != "latest":
-			logging.debug("setting DETECT_LATEST_RELEASE_VERSION to version {} of detect".format(self.detect_version))
-			my_env["DETECT_LATEST_RELEASE_VERSION"] = self.detect_version
-			subprocess_options = self._adjust_detect_options_for_backwards_compatibility(subprocess_options, self.detect_version)
+		subprocess_options = self._adjust_detect_options_for_backwards_compatibility(subprocess_options, self.detect_version)
 
+		logging.debug('Running hub detect with options: %s' % self._redact(subprocess_options))
 		result = subprocess.run(
 			subprocess_options, 
-			env=my_env,
 			stdout=subprocess.PIPE, 
 			stderr=subprocess.STDOUT, 
 			universal_newlines=True)
@@ -257,7 +250,6 @@ class HubDetectWrapper:
 		# run hub detect, parse the output results to get the information desired
 		start = datetime.now()
 		subprocess_options = self._determine_subprocess_options()
-		logging.debug('Running hub detect with options: %s' % self._redact(subprocess_options))
 
 		result = self._run_detect(subprocess_options)
 		finish = datetime.now()
