@@ -87,7 +87,7 @@ docker run gsnyderbds/hub_performance_probe -h
 3. Check /tmp/probe_results/hub_probe.log for progress and, by default, results are written into .../hub-performance-results.csv
 
 ## Release History
-* Docker Hub tag: 1.1, Date: Nov 28, 2018
+* Docker Hub tag: 1.2, Date: Nov 28, 2018
     * refactoring the use of hub-detect to use the jar files directly, i.e. no download of detect jar
     * improving the argparse options to clarify the use of different detect versions, clarify how to select different benchmarks
 
