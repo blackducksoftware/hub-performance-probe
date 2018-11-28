@@ -28,49 +28,19 @@ class TestHubDetectWrapper(unittest.TestCase):
 
 		wrapper = HubDetectWrapper(self.fake_url)
 
-	def test_init_uses_the_right_path(self):		
-		wrapper = HubDetectWrapper(self.fake_url)
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_shell_script_path)
-
-		wrapper = HubDetectWrapper(self.fake_url, detect_path="/tmp/hub-detect-4.2.1.jar")
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_jar_file_path)
-
-	def test_assertion_error_thrown_for_path_with_invalid_file_extension(self):
-		wrapper = HubDetectWrapper(self.fake_url, detect_path="/tmp/file.badextension")
-
-		with self.assertRaises(AssertionError):
-			wrapper._get_shell_script_or_jar_file_options()
-
-		wrapper = HubDetectWrapper(self.fake_url, detect_path="/tmp/file-with-no-extension")
-
-		with self.assertRaises(AssertionError):
-			wrapper._get_shell_script_or_jar_file_options()
-
-	def test_confirm_subprocess_options_begin_with_java_when_using_detect_jar_file(self):
-		# using detect jar file
-		wrapper = HubDetectWrapper(self.fake_url, detect_path="/tmp/hub-detect-4.2.1.jar")
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_jar_file_path)
-
-		subprocess_options = wrapper._determine_subprocess_options()
-		self.assertEqual(subprocess_options[0], "java")
-
-	def test_confirm_subprocess_options_begin_with_detect_shell_script(self):
-		# using detect shell script, the default
-		wrapper = HubDetectWrapper(self.fake_url)
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_shell_script_path)
-
-		subprocess_options = wrapper._determine_subprocess_options()
-		self.assertEqual(subprocess_options[0], self.expected_shell_script_path)
+	def test_get_detect_path(self):
+		expected_paths = {
+			"4.4.1": "hub-detect-4.4.1.jar",
+			"4.3.0": "hub-detect-4.3.0.jar",
+			"3.1.1": "hub-detect-3.1.1.jar"
+		}
+		for version, path in expected_paths.items():
+			wrapper = HubDetectWrapper(self.fake_url, detect_version=version)
+			self.assertEqual(wrapper.detect_version, version)
+			self.assertEqual(wrapper.hub_detect_path, path)
 
 	def test_confirm_subprocess_options_when_authenticating_with_username_and_password(self):
-		# using detect shell script, the default
 		wrapper = HubDetectWrapper(self.fake_url, blackduck_username="the-username", blackduck_password="the-password")
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_shell_script_path)
 
 		subprocess_options = wrapper._determine_subprocess_options()
 		self.assertTrue("--blackduck.username=the-username" in subprocess_options)		
@@ -78,10 +48,7 @@ class TestHubDetectWrapper(unittest.TestCase):
 		self.assertTrue("--blackduck.api.token" not in subprocess_options)
 
 	def test_confirm_subprocess_options_when_authenticating_with_token(self):
-		# using detect shell script, the default
 		wrapper = HubDetectWrapper(self.fake_url, blackduck_token="the-token")
-
-		self.assertEqual(wrapper.hub_detect_path, self.expected_shell_script_path)
 
 		subprocess_options = wrapper._determine_subprocess_options()
 		self.assertTrue("--blackduck.username=the-username" not in subprocess_options)		
@@ -125,37 +92,26 @@ class TestHubDetectWrapper(unittest.TestCase):
 		result = wrapper._run_detect(subprocess_options)
 
 		self.assertEqual(result.returncode, 0)
+		# Need to adjust this with any new version that is added to the list
+		self.assertEqual(wrapper.detect_version, "4.4.1")
+		self.assertEqual(wrapper.hub_detect_path, "hub-detect-4.4.1.jar")
 		self.assertTrue(os.path.isfile(detect_log_path))
 
-		# Verify that no detect version was specified since we are using 'latest'
-		with open(detect_log_path,'r') as f:
-			for line in f:
-				line = re.findall(r'DETECT_LATEST_RELEASE_VERSION', line)
-				if line:
-					print(line)
 
 	def test_run_detect_with_detect_version_specified(self):
 		output_dir="/tmp/output_dir"
 		detect_log_path = output_dir + "/detect.log"
-		detect_version="4.2.1"
+		detect_version="4.2.0"
 		wrapper = HubDetectWrapper(self.fake_url, detect_log_path=output_dir, detect_version=detect_version)
 
 		subprocess_options = ["env"] # this is a contrived set of subprocess options
 		result = wrapper._run_detect(subprocess_options)
 
 		self.assertEqual(result.returncode, 0)
+		# Need to adjust this with any new version that is added to the list
+		self.assertEqual(wrapper.detect_version, "4.2.0")
+		self.assertEqual(wrapper.hub_detect_path, "hub-detect-4.2.0.jar")
 		self.assertTrue(os.path.isfile(detect_log_path))
-
-		# Verify that detect version was specified
-		found_version=""
-		with open(detect_log_path,'r') as f:
-			for line in f:
-				found_line = re.findall(r'DETECT_LATEST_RELEASE_VERSION', line)
-				if found_line:
-					found_version = found_line
-					self.assertEqual(line.strip(), "DETECT_LATEST_RELEASE_VERSION=4.2.1")
-
-		self.assertTrue('DETECT_LATEST_RELEASE_VERSION' in found_version)
 
 	def check_the_parsing(self, test_d, method_to_test):
 		wrapper = HubDetectWrapper(self.fake_url)
@@ -264,9 +220,39 @@ class TestHubDetectWrapper(unittest.TestCase):
 
 
 
+	def test_adjust_detect_options_for_backwards_compatibility(self):
+		wrapper = HubDetectWrapper(self.fake_url)
 
+		input_options = [
+			Path('/tmp/hub-detect.sh'),
+			'--blackduck.url={}'.format(self.fake_url), 
+			'--blackduck.username=a_user', 
+			'--blackduck.password=a_password', 
+			'--blackduck.trust.cert=true', 
+			'--blackduck.api.timeout', 
+			'--detect.api.timeout', 
+			'--detect.policy.check.fail.on.severities=ALL'
+		]
+		expected_options_old_versions = [
+			Path('/tmp/hub-detect.sh'),
+			'--blackduck.hub.url={}'.format(self.fake_url), 
+			'--blackduck.hub.username=a_user', 
+			'--blackduck.hub.password=a_password', 
+			'--blackduck.hub.trust.cert=true', 
+			'--blackduck.hub.api.timeout', 
+			'--detect.api.timeout', 
+			'--detect.policy.check.fail.on.severities=ALL'
+		]
+		options_and_versions = {
+			'4.4.1' : {'input': input_options, 'expected': input_options},
+			'4.2.0' : {'input': input_options, 'expected': input_options},
+			'4.1.0' : {'input': input_options, 'expected': expected_options_old_versions},
+			'3.0.1' : {'input': input_options, 'expected': expected_options_old_versions},
+		}
 
-
+		for version_str, inputs_and_expected in options_and_versions.items():
+			resulting_options = wrapper._adjust_detect_options_for_backwards_compatibility(inputs_and_expected['input'], version_str)
+			assert resulting_options == inputs_and_expected['expected']
 
 
 

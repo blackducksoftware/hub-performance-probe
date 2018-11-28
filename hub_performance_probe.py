@@ -25,11 +25,6 @@ BENCHMARKS = {
 		'detect_scanning_options': [
 			{'label': 'no-options', 'detect_options': []},
 			{'label': 'policy-check', 'detect_options': ['--detect.policy.check.fail.on.severities=ALL',]},
-			{'label': 'risk-report', 'detect_options': ['--detect.risk.report.pdf=true',]},
-			{'label': 'policy-and-risk', 'detect_options': ['--detect.policy.check.fail.on.severities=ALL', '--detect.risk.report.pdf=true',]},
-			{'label': 'no-sig-scanner', 'detect_options': ['--detect.blackduck.signature.scanner.disabled=true',]},	
-			{'label': 'policy-check-no-sig-scanner', 'detect_options': ['--detect.blackduck.signature.scanner.disabled=true', '--detect.policy.check.fail.on.severities=ALL',]},
-			{'label': 'policy-and-risk-no-sig-scanner', 'detect_options': ['--detect.blackduck.signature.scanner.disabled=true', '--detect.policy.check.fail.on.severities=ALL', '--detect.risk.report.pdf=true',]},
 		]
 	},
 	'snippet_matching': {
@@ -96,6 +91,7 @@ class HubPerformanceProbe:
 				'--detect.project.version.name={}'.format(version),
 				'--detect.source.path={}'.format(source_path),
 				'--detect.output.path={}_output'.format(output_path),
+				'--detect.code.location.name={}-{}'.format(project_name, version)
 			]
 		detect_options = project_options
 		detect_options.extend(self.default_detect_options)
@@ -124,7 +120,7 @@ class HubPerformanceProbe:
 				additional_detect_options=options)
 
 			thread_project_results = hub_detect_wrapper.run()
-			logging.debug("Got results back: {}".format(thread_project_results))
+			logging.info("Got results back: {}".format(thread_project_results))
 			# Failures break CSV output. 
 			# I add 1 retry and if unsuccessful - exclude results
 			if (thread_project_results['returncode'] > 0):
@@ -237,9 +233,11 @@ if __name__ == "__main__":
 	parser.add_argument("url")
 	parser.add_argument("--username", default="sysadmin")
 	parser.add_argument("--password", default="blackduck")
+	all_benchmarks = ",".join(BENCHMARKS.keys())
+	parser.add_argument("--benchmarks", default=all_benchmarks, help="A comma-separate list of benchmarks chosen from {} - default is {}".format(BENCHMARKS.keys(), all_benchmarks))
 	parser.add_argument("--token", default="undefined", help="Use authentication token, this will ignore username and password options")
 	parser.add_argument("--csvfile", default="/var/log/hub-performance-results.csv", help="Where to write the results in CSV format (default: out.csv")
-	parser.add_argument("--detect_version", default="latest")
+	parser.add_argument("--detect_version", default="4.4.1", help="Choose from one of the supported hub detect versions - {}".format(HubDetectWrapper.supported_detect_versions))
 	parser.add_argument("--detectoutputbasedir", default="/var/log/hub_probe_outputs", help="Override where detect output files are written. Useful when running the probe inside a docker container and you wnat to write to a host mounted volume")
 	parser.add_argument("--description", help="A description that will be included in the test results")
 	parser.add_argument("--iterations", type=int, default=4)
@@ -263,6 +261,7 @@ if __name__ == "__main__":
 		blackduck_username=args.username, 
 		blackduck_password=args.password, 
 		blackduck_api_token=args.token,
+		benchmarks=args.benchmarks.split(","),
 		csv_output_file=args.csvfile, 
 		iterations=args.iterations,
 		max_threads=args.maxthreads,
