@@ -5,7 +5,7 @@ FROM python:3
 
 # derived from https://linux-tips.com/t/how-to-install-java-8-on-debian-jessie/349
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-java.list && echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /etc/apt/sources.list.d/webupd8team-java.list
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+RUN apt-key adv --no-tty --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
 RUN apt-get update
 # from https://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
